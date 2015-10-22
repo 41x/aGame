@@ -32,7 +32,7 @@ GAME_NAME - многопользовательская карточная web и
 
 ## Календарный план
 
-[Lastest version here](https://docs.google.com/spreadsheets/d/1jgTrbylwclXIRwisVMb8TkTOoZvIkCUW3ULqIY-CbyA/edit#gid=1386834576). 
+Lastest version [here](https://docs.google.com/spreadsheets/d/1jgTrbylwclXIRwisVMb8TkTOoZvIkCUW3ULqIY-CbyA/edit#gid=1386834576). 
 
 
 ## Авторы
