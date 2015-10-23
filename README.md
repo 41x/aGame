@@ -11,6 +11,15 @@ GAME_NAME - многопользовательская карточная web и
 
 Календарный план > [here](https://docs.google.com/spreadsheets/d/1jgTrbylwclXIRwisVMb8TkTOoZvIkCUW3ULqIY-CbyA/edit?usp=sharing). 
 
+----------
+
+Мокапы > [here](https://drive.google.com/folderview?id=0B900oIzRDNwAY21GbU9uWEJkY28&usp=sharing). 
+
+----------
+
+UML диаграммы > [here](https://drive.google.com/open?id=0B900oIzRDNwANVJqYkExa2ljN1k).
+
+----------
 
 ### Авторы
 - **41x** - Нам А.
