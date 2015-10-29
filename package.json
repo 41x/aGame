@@ -1,0 +1,30 @@
+{
+  "name": "agame",
+  "version": "1.0.0",
+  "description": "card game",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/41x/aGame.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/41x/aGame/issues"
+  },
+  "homepage": "https://github.com/41x/aGame#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.2.3",
+    "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-watch": "^4.3.5"
+  }
+}
