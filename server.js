@@ -7,7 +7,9 @@ var express    = require('express'),
     path       = require('path');
 
 var app = express();
-var config = require('./app/config.js');
+var config = require('./server/config.js');
+
+mongoose.connect(config.database); 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -23,8 +25,12 @@ app.use(morgan('dev'));
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/public/app/views/index.html'));
-});
+
+app.use('/api/users', require('./server/api/user/user.route'));
+
+app.route('/*')
+  .get(function(req, res) {
+    res.send('nope');
+  });
 
 app.listen(config.port);
