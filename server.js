@@ -27,6 +27,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 app.use('/api/users', require('./server/api/user/user.route'));
+app.use('/api/cards', require('./server/api/card/card.route'));
 
 app.route('/*')
   .get(function(req, res) {

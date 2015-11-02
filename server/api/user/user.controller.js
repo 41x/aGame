@@ -49,8 +49,12 @@ module.exports.me = function(req, res) {
 
 };
 
-var findUser = function(userId, callback) {
-  User.findById(userId, function (err, user) {
+/*
+* TODO: Изменить, добави только для текущего пользователя, прикрепленного к req
+*/
+
+var findUser = function(req, res, callback) {
+  User.findById(req.params.id, function (err, user) {
     if (err) return validationError(res, err);
     if (!user) return res.status(401).send('Unauthorized');
     callback(user);
@@ -58,15 +62,14 @@ var findUser = function(userId, callback) {
 };
 
 module.exports.indexDeck = function(req, res) {
-  findUser(req.params.id, function(user){
+  findUser(req, res, function(user){
     res.json(user.decks);
   });
 };
 
 module.exports.createDeck = function(req, res) {
-  findUser(req.params.id, function(user) {
-      console.log('test');
-    user.decks.push({name: 'hunter'});
+  findUser(req, res, function(user) {
+    user.decks.push({name: req.body.deckName});
     
     user.save(function(err) {
       if (err) validationError(res, err);
@@ -76,13 +79,13 @@ module.exports.createDeck = function(req, res) {
 };
 
 module.exports.showDeck = function(req, res) {
-  findUser(req.params.id, function(user){
+  findUser(req, res, function(user){
     res.json(user.decks.id(req.params.deckId));
   });
 };
 
 module.exports.destroyDeck = function(req, res) {
-  findUser(req.params.id, function(user){
+  findUser(req, res, function(user){
     user.decks.pull({ _id: req.params.deckId});
 
     user.save(function(err) {
@@ -91,3 +94,13 @@ module.exports.destroyDeck = function(req, res) {
     });
   });
 };
+
+var findDeck = function(req, res, callback) {
+  findUser(req, res, function(user){
+    var deck = user.decks.id(req.params.deckId);
+
+    if (!deck) return res.status(401).send('No Deck');
+    callback(deck)
+  });
+};
+

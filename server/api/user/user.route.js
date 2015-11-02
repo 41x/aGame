@@ -2,7 +2,6 @@
 
 var express = require('express');
 var controller = require('./user.controller');
-var deckRouter = require('../deck/deck.route');
 var router = express.Router({mergeParams: true});
 
 
