@@ -1,6 +1,7 @@
 'use strict';
 
 var User = require('./user.model').User;
+var Card = require('../card/card.model');
 var jwt = require('jsonwebtoken');
 
 var validationError = function(res, err) {
@@ -80,7 +81,11 @@ module.exports.createDeck = function(req, res) {
 
 module.exports.showDeck = function(req, res) {
   findUser(req, res, function(user){
-    res.json(user.decks.id(req.params.deckId));
+    user.decks.id(req.params.deckId)
+      .populate('cards')
+      .exec(function(err, deck) {
+        res.json(deck);
+      });
   });
 };
 
@@ -100,7 +105,21 @@ var findDeck = function(req, res, callback) {
     var deck = user.decks.id(req.params.deckId);
 
     if (!deck) return res.status(401).send('No Deck');
-    callback(deck)
+    callback(user, deck)
+  });
+};
+
+module.exports.addCard = function(req, res) {
+  findDeck(req, res, function(user, deck) {
+    Card.findById(req.params.cardId, function(err, card) {
+      if (err) return validationError(res, err);
+      if (!card) return res.status(401).send('No such card');
+      deck.cards.push(card._id);
+      user.save(function(err) {
+        if (err) validationError(res, err);
+        res.json({ message: 'Card added' });
+      })
+    });
   });
 };
 

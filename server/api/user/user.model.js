@@ -3,7 +3,7 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 var bcrypt     = require('bcrypt-nodejs');
-
+var Card = require('../card/card.model');
 
 var DeckSchema   = new Schema({
   name: { 
@@ -12,7 +12,7 @@ var DeckSchema   = new Schema({
   },
   cards: {
     type: [{
-      type: Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId, 
       ref: 'Card'
     }],
     validate: [ deckLimit, '{PATH} exceeds the limit of 30' ]
@@ -21,13 +21,7 @@ var DeckSchema   = new Schema({
 
 function deckLimit(val) {
   return val.length <= 30;
-}
-
-DeckSchema.pre('save', function(next) {
-  var deck = this;
-
-  if (!deck.isModified(cards)) return next();
-});
+};
 
 var UserSchema   = new Schema({
   name: { 
@@ -44,7 +38,18 @@ var UserSchema   = new Schema({
     required: true, 
     select: false 
   },
-  decks:  [DeckSchema]
+  decks:  [{
+    name: { 
+      type: String, 
+      required: true, 
+    },
+    cards: {
+      type: [{
+        type: Schema.Types.ObjectId, 
+        ref: 'Card'
+      }]
+    }  
+  }]
 });
 
 UserSchema
