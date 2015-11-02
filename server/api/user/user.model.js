@@ -12,15 +12,26 @@ var DeckSchema   = new Schema({
   },
   cards: {
     type: [{
-      type: Schema.Types.ObjectId, 
-      ref: 'Card'
+      count: {
+        type: Number,
+        default: 1
+      },
+      card: {
+        type: Schema.Types.ObjectId, 
+        ref: 'Card',
+        index: { unique: true }
+      }
     }],
     validate: [ deckLimit, '{PATH} exceeds the limit of 30' ]
   }
 });
 
 function deckLimit(val) {
-  return val.length <= 30;
+  var sum = 0;
+  for (var i = 0; i < val.length; i++) {
+    sum += val[i].count;
+  }
+  return sum <= 30;
 };
 
 var UserSchema   = new Schema({
@@ -38,18 +49,7 @@ var UserSchema   = new Schema({
     required: true, 
     select: false 
   },
-  decks:  [{
-    name: { 
-      type: String, 
-      required: true, 
-    },
-    cards: {
-      type: [{
-        type: Schema.Types.ObjectId, 
-        ref: 'Card'
-      }]
-    }  
-  }]
+  decks:  [DeckSchema]
 });
 
 UserSchema

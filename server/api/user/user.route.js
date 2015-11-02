@@ -17,5 +17,6 @@ router.get('/:id/decks/:deckId', controller.showDeck);
 router.delete('/:id/decks/:deckId', controller.destroyDeck);
 
 router.post('/:id/decks/:deckId/cards/:cardId', controller.addCard);
+router.delete('/:id/decks/:deckId/cards/:cardId', controller.remCard);
 
 module.exports = router;

@@ -114,12 +114,46 @@ module.exports.addCard = function(req, res) {
     Card.findById(req.params.cardId, function(err, card) {
       if (err) return validationError(res, err);
       if (!card) return res.status(401).send('No such card');
-      deck.cards.push(card._id);
+
+      var isExists = false;
+
+      deck.cards.forEach(function(el) {
+        if (String(el.card) == String(card._id)) {
+          isExists = true;
+          el.count += 1;
+        }
+      });
+
+      if (!isExists) deck.cards.push({ card: card._id });
+
       user.save(function(err) {
-        if (err) validationError(res, err);
+        if (err) return validationError(res, err);
         res.json({ message: 'Card added' });
       })
     });
   });
 };
 
+module.exports.remCard = function(req, res) {
+  findDeck(req, res, function(user, deck) {
+    Card.findById(req.params.cardId, function(err, card) {
+      if (err) return validationError(res, err);
+      if (!card) return res.status(401).send('No such card');
+
+      deck.cards.forEach(function(el) {
+        if (String(el.card) == String(card._id)) {
+          if (el.count > 1) 
+            el.count -= 1;
+          else
+            deck.cards.pull(el);
+        }
+      });
+
+      user.save(function(err) {
+        if (err) return validationError(res, err);
+        console.log(err);
+        res.json({ message: 'Card deleted' });
+      })
+    });
+  });
+};
