@@ -17,6 +17,7 @@ module.exports.index = function(req, res) {
 
 module.exports.create = function(req, res) {
   var user = new User();
+  console.log(req.body);
   user.name = req.body.name;
   user.password = req.body.password;
   user.role = 'user';

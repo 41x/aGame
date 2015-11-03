@@ -46,19 +46,9 @@ var UserSchema   = new Schema({
   password: { 
     type: String, 
     required: true, 
-    select: false 
   },
   decks:  [DeckSchema]
 });
-
-UserSchema
-  .virtual('profile')
-  .get(function() {
-    return {
-      'name': this.name,
-      'role': this.role
-    };
-  });
 
 UserSchema.pre('save', function(next) {
   var user = this;
@@ -73,9 +63,8 @@ UserSchema.pre('save', function(next) {
   });
 });
 
-UserSchema.methods.comparePassword = function(password) {
-  var user = this;
-  return bcrypt.compareSync(password, user.password);
+UserSchema.methods.authenticate = function(password) {
+  return bcrypt.compareSync(password, this.password);
 };
 
 module.exports.User = mongoose.model('User', UserSchema);
