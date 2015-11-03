@@ -19,7 +19,7 @@ module.exports.isAuthenticated = function isAuthenticated() {
       validateJwt(req, res, next);
     })
     .use(function(req, res, next) {
-      User.findById(req.user._id, function (err, user) {
+      User.findById(req.user._id, function(err, user) {
         if (err) return next(err);
         if (!user) return res.status(401).send('Unauthorized2');
 
@@ -29,11 +29,11 @@ module.exports.isAuthenticated = function isAuthenticated() {
     });
 };
 
-module.exports.hasRole = function hasRole (roleRequired) {
+module.exports.hasRole = function hasRole(roleRequired) {
   if (!roleRequired) throw new Error('Required role needs to be set');
 
   return compose()
-    .use(isAuthenticated())
+    .use(exports.isAuthenticated())
     .use(function meetsRequirements(req, res, next) {
       if (config.userRoles.indexOf(req.user.role) >= config.userRoles.indexOf(roleRequired)) {
         next();

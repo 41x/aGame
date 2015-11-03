@@ -47,8 +47,27 @@ var UserSchema   = new Schema({
     type: String, 
     required: true, 
   },
-  decks:  [DeckSchema]
+  decks:  [DeckSchema],
+  wins: {
+    type: Number,
+    default: 0
+  },
+  games: {
+    type: Number,
+    default: 0
+  },
 });
+
+UserSchema
+  .virtual('profile')
+  .get(function() {
+    return {
+      'name': this.name,
+      'role': this.role,
+      'wins': this.wins,
+      'games': this.games
+    };
+  });
 
 UserSchema.pre('save', function(next) {
   var user = this;

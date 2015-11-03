@@ -3,7 +3,8 @@
 var path = require('path');
 
 module.exports = function(app) {
-  app.use('/api/users', require('./api/user/user.route'));
+  app.use('/api/users', require('./api/user/user.route').userRouter);
+  app.use('/api/decks', require('./api/user/user.route').deckRouter);
   app.use('/api/cards', require('./api/card/card.route'));
 
 

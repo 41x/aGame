@@ -4,21 +4,23 @@ var express = require('express');
 var controller = require('./user.controller');
 var auth = require('../../auth/auth.service');
 
-var router = express.Router({mergeParams: true});
+var userRouter = express.Router();
 
+userRouter.get('/', auth.isAuthenticated(), controller.index);
+userRouter.delete('/:id', auth.hasRole('admin'), controller.destroy);
+userRouter.get('/me', auth.isAuthenticated(), controller.me);
+userRouter.get('/:id', auth.isAuthenticated(), controller.show);
+userRouter.post('/', controller.create);
 
-router.get('/', auth.isAuthenticated(), controller.index);
-router.delete('/:id', auth.isAuthenticated(), controller.destroy);
-router.get('/me', auth.isAuthenticated(), controller.me);
-router.get('/:id', auth.isAuthenticated(), controller.show);
-router.post('/', auth.isAuthenticated(), controller.create);
+var deckRouter = express.Router();
 
-router.get('/:id/decks', auth.isAuthenticated(), controller.indexDeck);
-router.post('/:id/decks', auth.isAuthenticated(), controller.createDeck);
-router.get('/:id/decks/:deckId', auth.isAuthenticated(), controller.showDeck);
-router.delete('/:id/decks/:deckId', auth.isAuthenticated(), controller.destroyDeck);
+deckRouter.get('/', auth.isAuthenticated(), controller.indexDeck);
+deckRouter.post('/', auth.isAuthenticated(), controller.createDeck);
+deckRouter.get('/:deckId', auth.isAuthenticated(), controller.showDeck);
+deckRouter.delete('/:deckId', auth.isAuthenticated(), controller.destroyDeck);
 
-router.post('/:id/decks/:deckId/cards/:cardId', auth.isAuthenticated(), controller.addCard);
-router.delete('/:id/decks/:deckId/cards/:cardId', auth.isAuthenticated(), controller.remCard);
+deckRouter.post('/:deckId/cards/:cardId', auth.isAuthenticated(), controller.addCard);
+deckRouter.delete('/:deckId/cards/:cardId', auth.isAuthenticated(), controller.remCard);
 
-module.exports = router;
+module.exports.userRouter = userRouter;
+module.exports.deckRouter = deckRouter;
