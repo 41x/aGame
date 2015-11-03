@@ -48,7 +48,7 @@ module.exports.destroy = function(req, res) {
 };
 
 module.exports.me = function(req, res) {
-
+  res.json(req.user);
 };
 
 /*
