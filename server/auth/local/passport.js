@@ -7,6 +7,7 @@ exports.setup = function (User, config) {
       passwordField: 'password' 
     },
     function(name, password, done) {
+      console.log('test');
       User.findOne({
         name: name.toLowerCase()
       }, function(err, user) {
