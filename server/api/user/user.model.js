@@ -18,8 +18,7 @@ var DeckSchema   = new Schema({
       },
       card: {
         type: Schema.Types.ObjectId, 
-        ref: 'Card',
-        index: { unique: true }
+        ref: 'Card'
       }
     }],
     validate: [ deckLimit, '{PATH} exceeds the limit of 30' ]
