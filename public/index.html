@@ -48,7 +48,7 @@
           <li ng-if="!main.loggedIn">
             <a href="/login">SignIn</a>
           </li>
-          <li ng-if="main.loggedIn" ng-click="main.doLogout()">
+          <li ng-if="!main.loggedIn" ng-click="main.doLogout()">
             <a href="/login">SignUp</a>
           </li>
           <li ng-if="main.loggedIn" class="navbar-text">
