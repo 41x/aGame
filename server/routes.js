@@ -9,9 +9,4 @@ module.exports = function(app) {
 
 
   app.use('/auth', require('./auth'));
-
-  app.route('/*')
-    .get(function(req, res) {
-      res.send('Bad Request');
-    });
 };

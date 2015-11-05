@@ -32,4 +32,8 @@ app.use(express.static(__dirname + '/public'));
 
 require('./server/routes')(app);
 
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/index.html'));
+});
+
 app.listen(config.port);

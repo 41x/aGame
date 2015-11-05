@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>This is aGame</title>
+  <base href="/">
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-cookies.js"></script>
+  
+  <script src="app/auth/auth.service.js"></script>
+  <script src="app/main/main.controller.js"></script>
+
+  <script src="app/app.routes.js"></script>
+  <script src="app/app.js"></script>
+</head>
+<body ng-app="aGameApp" ng-controller="mainController as main">
+  <div class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">
+            <span class="glyphicon glyphicon-fire text-danger"></span>
+            aGame
+          </a>
+        </div>
+
+        <ul class="nav navbar-nav" ng-if="main.loggedIn">
+          <li>
+            <a href="/"></span>Card constructor</a>
+          </li>
+          <li>
+            <a href="/"></span>Rating</a>
+          </li>          
+
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-if="!main.loggedIn">
+            <a href="/login">SignIn</a>
+          </li>
+          <li ng-if="main.loggedIn" ng-click="main.doLogout()">
+            <a href="/login">SignUp</a>
+          </li>
+          <li ng-if="main.loggedIn" class="navbar-text">
+            Hello {{ main.user.name }}
+          </li>
+          <li ng-if="main.loggedIn" ng-click="main.doLogout()">
+            <a href="/login">SignOut</a>
+          </li>
+        </ul>
+      </div>    
+  </div>
+
+  <main>  
+    <div id="content-views">
+      <div ng-view></div>
+    </div>
+  </main>
+</body>
+</html>

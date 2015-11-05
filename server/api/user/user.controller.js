@@ -52,7 +52,7 @@ module.exports.destroy = function(req, res) {
 };
 
 module.exports.me = function(req, res) {
-  User.find({ _id: req.user._id })
+  User.findOne({ _id: req.user._id })
     .populate('decks.cards.card')
     .exec(function(err, user) {
       if (err) return next(err);
