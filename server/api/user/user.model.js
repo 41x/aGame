@@ -66,7 +66,7 @@ UserSchema
     this.constructor.findOne({name: value}, function(err, user) {
       if(err) throw err;
       if(user) {
-        if(self._id === user._id) return respond(true);
+        if(String(self._id) == String(user._id)) return respond(true);
         return respond(false);
       }
       respond(true);
