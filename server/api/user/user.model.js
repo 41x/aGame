@@ -3,14 +3,13 @@
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 var bcrypt     = require('bcrypt-nodejs');
-var Card = require('../card/card.model');
-var Deck = require('../deck/deck.model');
+var Card = require('../card/card.model').Card;
+var DeckSchema = require('../deck/deck.model').DeckSchema;
 
 var UserSchema   = new Schema({
   name: { 
     type: String, 
     required: true, 
-    index: { unique: true }
   },
   role: {
     type: String,
@@ -20,7 +19,7 @@ var UserSchema   = new Schema({
     type: String, 
     required: true, 
   },
-  decks:  [Deck],
+  decks:  [DeckSchema],
   wins: {
     type: Number,
     default: 0
@@ -31,6 +30,9 @@ var UserSchema   = new Schema({
   },
 });
 
+/*
+* Virtuals
+*/
 UserSchema
   .virtual('profile')
   .get(function() {
@@ -42,6 +44,38 @@ UserSchema
     };
   });
 
+/*
+* Validations
+*/
+UserSchema
+  .path('name')
+  .validate(function(name) {
+    return name.length;
+  }, 'Name cannot be blank');
+
+UserSchema
+  .path('password')
+  .validate(function(password) {
+    return password.length;
+  }, 'Password cannot be blank');
+
+UserSchema
+  .path('name')
+  .validate(function(value, respond) {
+    var self = this;
+    this.constructor.findOne({name: value}, function(err, user) {
+      if(err) throw err;
+      if(user) {
+        if(self._id === user._id) return respond(true);
+        return respond(false);
+      }
+      respond(true);
+    });
+}, 'The specified name is already in use.');
+
+/*
+* Pre-save
+*/
 UserSchema.pre('save', function(next) {
   var user = this;
 
@@ -59,4 +93,4 @@ UserSchema.methods.authenticate = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports.User = mongoose.model('User', UserSchema);

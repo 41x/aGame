@@ -2,7 +2,7 @@
 
 var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
-var Card = require('../card/card.model');
+var Card = require('../card/card.model').Card;
 
 var DeckSchema   = new Schema({
   name: { 
@@ -32,4 +32,5 @@ function deckLimit(val) {
   return sum <= 30;
 };
 
-module.exports = mongoose.model('Deck', DeckSchema);
+module.exports.Deck = mongoose.model('Deck', DeckSchema);
+module.exports.DeckSchema = DeckSchema;

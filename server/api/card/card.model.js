@@ -15,4 +15,4 @@ var CardSchema   = new Schema({
   img: String
 });
 
-module.exports = mongoose.model('Card', CardSchema);
+module.exports.Card = mongoose.model('Card', CardSchema);

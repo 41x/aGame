@@ -1,7 +1,6 @@
 'use strict';
 
-var User = require('./user.model');
-var Card = require('../card/card.model');
+var User = require('./user.model').User;
 var jwt = require('jsonwebtoken');
 
 var validationError = function(res, err) {
@@ -27,9 +26,8 @@ module.exports.create = function(req, res) {
   user.name = req.body.name;
   user.password = req.body.password;
   user.role = 'user';
-
   user.save(function(err, user) {
-    if (err) validationError(res, err);
+    if (err) return validationError(res, err);
     res.json({ message: 'User created!' });
   });
 };

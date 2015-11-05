@@ -1,9 +1,14 @@
 'use strict';
 
-var User = require('../user/user.model');
-var Card = require('../card/card.model');
-var Deck = require('../deck/deck.model');
+var User = require('../user/user.model').User;
+var Card = require('../card/card.model').Card;
+var Deck = require('../deck/deck.model').Deck;
 var jwt = require('jsonwebtoken');
+
+
+var validationError = function(res, err) {
+  return res.status(422).json(err);
+};
 
 /*
 *  User's Decks Operations
@@ -14,8 +19,7 @@ module.exports.indexDeck = function(req, res) {
 };
 
 module.exports.createDeck = function(req, res) {
-  req.user.decks.push({name: req.body.deckName});
-  
+  req.user.decks.push({name: req.body.name});
   req.user.save(function(err) {
     if (err) validationError(res, err);
     res.json({ message: 'Deck created!' });
@@ -42,6 +46,7 @@ module.exports.destroyDeck = function(req, res) {
 /*
 * Deck's Cards Operations
 */
+
 module.exports.addCard = function(req, res) {
     Card.findById(req.params.cardId, function(err, card) {
       if (err) return validationError(res, err);

@@ -1,6 +1,6 @@
 'use strict';
 
-var Card = require('./card.model');
+var Card = require('./card.model').Card;
 var jwt = require('jsonwebtoken');
 
 var validationError = function(res, err) {
@@ -15,6 +15,9 @@ module.exports.index = function(req, res) {
 };
 
 module.exports.create = function(req, res) {
+  if ((!req.body.name && req.body.password))
+    return validationError(res, { message: 'No parameters' });
+
   var card = new Card();
 
   card.name = req.body.name;

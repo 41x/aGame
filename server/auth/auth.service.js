@@ -21,7 +21,7 @@ module.exports.isAuthenticated = function isAuthenticated() {
     .use(function(req, res, next) {
       User.findById(req.user._id, function(err, user) {
         if (err) return next(err);
-        if (!user) return res.status(401).send('Unauthorized2');
+        if (!user) return res.status(401).send('Unauthorized');
 
         req.user = user;
         next();
