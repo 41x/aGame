@@ -9,7 +9,7 @@ var DeckSchema = require('../deck/deck.model').DeckSchema;
 var UserSchema   = new Schema({
   name: { 
     type: String, 
-    required: true, 
+    required: true
   },
   role: {
     type: String,
@@ -17,7 +17,7 @@ var UserSchema   = new Schema({
   },
   password: { 
     type: String, 
-    required: true, 
+    required: true
   },
   decks:  [DeckSchema],
   wins: {
@@ -27,7 +27,7 @@ var UserSchema   = new Schema({
   games: {
     type: Number,
     default: 0
-  },
+  }
 });
 
 /*

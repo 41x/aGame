@@ -18,7 +18,7 @@ module.exports.index = function(req, res) {
 };
 
 module.exports.create = function(req, res) {
-  if ((!req.body.name && req.body.password))
+  if (!req.body.name && !req.body.password)
     return validationError(res, { message: 'No parameters' });
 
   var user = new User();
