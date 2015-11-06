@@ -11,14 +11,14 @@ var validationError = function(res, err) {
 * Users Operations
 */
 module.exports.index = function(req, res) {
-    User.find(function(err, users) {
-      if(err) return res.status(500).send(err);
-      res.status(200).json(users);
-    });
+  User.find(function(err, users) {
+    if(err) return res.status(500).send(err);
+    res.status(200).json(users);
+  });
 };
 
 module.exports.create = function(req, res) {
-  if (!req.body.name && !req.body.password)
+  if (req.body.name == undefined || req.body.password == undefined)
     return validationError(res, { message: 'No parameters' });
 
   var user = new User();
