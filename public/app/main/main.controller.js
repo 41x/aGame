@@ -1,10 +1,12 @@
 'use strict';
 
-angular.module('mainCtrl', [])
+angular.module('main', [])
   .controller('mainController', function($rootScope, $location, Auth) {
     var vm = this;
 
     vm.loggedIn = Auth.isLoggedIn();
+
+    vm.selectedDeck = {};
 
 
     $rootScope.$on('$routeChangeStart', function() {
@@ -42,5 +44,9 @@ angular.module('mainCtrl', [])
 
     vm.doSignup = function() {
       
+    }
+
+    vm.play = function() {
+      $location.path('/game');
     }
   });

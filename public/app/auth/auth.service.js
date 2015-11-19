@@ -1,4 +1,4 @@
-angular.module('authService', [])
+angular.module('auth', [])
   .factory('Auth', function($http, $q, AuthToken) {
     var authFactory = {};
 
@@ -26,6 +26,7 @@ angular.module('authService', [])
       return false;
     };
 
+    
     authFactory.getUser = function() {
       if (AuthToken.getToken())
         return $http.get('/api/users/me', { cache: true });

@@ -1,1 +1,14 @@
-wddw
+<div class="container" ng-if="main.loggedIn">
+  <div class="jumbotron">
+  <h1>{{main.user.name}}</h1>
+  <div class="container">
+
+      <div>
+        <select name="selectDeck" id="selectDeck" ng-options="deck.name for deck in main.user.decks track by deck._id" ng-model="main.selectedDeck">
+        </select>
+      </div>
+    <button type="button" class="btn btn-lg btn-primary" ng-hide="main.selectedDeck == {}" ng-click="main.play()">
+      Play
+    </button>
+  </div>
+</div>

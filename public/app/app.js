@@ -1,9 +1,10 @@
-angular.module('aGameApp', [
+var app = angular.module('aGameApp', [
   'ngAnimate',
   'ngCookies',
   'appRoutes',
-  'authService',
-  'mainCtrl'
+  'auth',
+  'main',
+  'game'
 ])
   .config(function($httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');

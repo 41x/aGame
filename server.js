@@ -8,8 +8,17 @@ var express    = require('express'),
     passport   = require('passport'),
     methodOverride = require('method-override'),
     cookieParser = require('cookie-parser');
+
+
 var app = express();
+var server = require('http').createServer(app);
 var config = require('./server/config.js');
+
+app.server = server.listen(config.port, function() {
+  console.log('Server listening at port %d', config.port);
+});
+
+var io = require('socket.io').listen(app.server);
 
 mongoose.connect(config.database); 
 
@@ -31,9 +40,10 @@ app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
 require('./server/routes')(app);
+require('./server/game')(io);
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-app.listen(config.port);
+
