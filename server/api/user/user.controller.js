@@ -56,7 +56,7 @@ module.exports.me = function(req, res) {
     .populate('decks.cards.card')
     .exec(function(err, user) {
       if (err) return next(err);
-      if (!user) return res.status(401).send('Unauthorized2');
+      if (!user) return res.status(401).send('Unauthorized');
 
       res.json(user);
     });

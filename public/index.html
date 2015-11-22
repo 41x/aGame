@@ -19,14 +19,17 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-cookies.js"></script>
   
-  <script src="app/auth/auth.service.js"></script>
+  <script src="app/components/auth/auth.service.js"></script>
+  <script src="app/account/account.controller.js"></script>
   <script src="app/main/main.controller.js"></script>
-    <script src="app/game/game.controller.js"></script>
+  <script src="app/game/queue/queue.controller.js"></script>
+  <script src="app/game/socket.js"></script>
+
 
   <script src="app/app.routes.js"></script>
   <script src="app/app.js"></script>
 </head>
-<body ng-app="aGameApp" ng-controller="mainController as main">
+<body ng-app="aGameApp" ng-controller="accountController as account">
   <div class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
@@ -36,7 +39,7 @@
           </a>
         </div>
 
-        <ul class="nav navbar-nav" ng-if="main.loggedIn">
+        <ul class="nav navbar-nav" ng-if="account.loggedIn">
           <li>
             <a href="/"></span>Card constructor</a>
           </li>
@@ -47,16 +50,16 @@
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
-          <li ng-if="!main.loggedIn">
+          <li ng-if="!account.loggedIn">
             <a href="/login">SignIn</a>
           </li>
-          <li ng-if="!main.loggedIn" ng-click="main.doLogout()">
-            <a href="/login">SignUp</a>
+          <li ng-if="!account.loggedIn">
+            <a href="/signup">SignUp</a>
           </li>
-          <li ng-if="main.loggedIn" class="navbar-text">
-            Hello {{ main.user.name }}
+          <li ng-if="account.loggedIn" class="navbar-text">
+            Hello {{ account.user.name }}
           </li>
-          <li ng-if="main.loggedIn" ng-click="main.doLogout()">
+          <li ng-if="account.loggedIn" ng-click="account.doLogout()">
             <a href="/login">SignOut</a>
           </li>
         </ul>

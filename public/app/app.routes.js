@@ -1,18 +1,22 @@
+'use strict';
+
 angular.module('appRoutes', ['ngRoute'])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'app/main/main.html'
+        templateUrl: 'app/main/main.html',
+        controller: 'mainController',
+        controllerAs: 'main'
       })
       .when('/login', {
         templateUrl: 'app/account/login/login.html',
-        controller: 'mainController',
+        controller: 'accountController',
         controllerAs: 'login'
       })
-      .when('/game', {
-        templateUrl: 'app/game/game.html',
-        controller: 'gameController',
-        controllerAs: 'game'        
+      .when('/queue', {
+        templateUrl: 'app/game/queue/queue.html',
+        controller: 'queueController',
+        controllerAs: 'queue'        
       })
       ;
 

@@ -6,47 +6,44 @@ angular.module('main', [])
 
     vm.loggedIn = Auth.isLoggedIn();
 
+    vm.decks = [];
+    vm.hasDecks = false;
     vm.selectedDeck = {};
 
 
-    $rootScope.$on('$routeChangeStart', function() {
-      vm.loggedIn = Auth.isLoggedIn();
 
-      if (!vm.loggedIn) return;
-
-      Auth.getUser()
-        .success(function(data) {
-          vm.user = data;
+    Auth.getUser()
+        .then(function(success) {
+          vm.user = success.data;
+          addDecks(success.data.decks);
+        }, function(err) {
+          $location.path('login');
         });
-    });
-
-    vm.doLogin = function() {
-      vm.processing = true;
-
-      vm.error = '';
-
-      Auth.login(vm.loginData.username, vm.loginData.password)
-        .success(function(data) {
-          vm.processing = false;
-          if (data.success)
-            $location.path('/');
-          else
-            vm.error = data.message;
-        });
-    }
-
-    vm.doLogout = function() {
-      Auth.logout();
-
-      vm.user = {};
-      $location.path('/login');
-    }
-
-    vm.doSignup = function() {
-      
-    }
 
     vm.play = function() {
-      $location.path('/game');
+      if (vm.selectedDeck != {}) {
+        var count = 0;
+        for (var card in vm.selectedDeck.cards) {
+
+        }
+        $location.path('/queue');
+      }
+    }
+
+    function addDecks(decks) {
+      for (var i in decks) {
+        var count = 0;
+        for (var j in decks[i].cards) {
+          count += decks[i].cards[j].count;
+        }
+
+        if (count == 30) 
+          vm.decks.push(decks[i]);
+      }
+
+      if (vm.decks.length > 0) {
+        vm.hasDecks = true;
+        vm.selectedDeck = vm.decks[0];
+      }
     }
   });
