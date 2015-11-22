@@ -7,14 +7,14 @@ module.exports = function(io) {
     function enterQueue() {
       sockets[socket.name] = socket;
       for (var i in sockets) {
-        sockets[i].emit('findEnemy', { count: Object.keys(sockets).length });
+        sockets[i].emit('enemyCount', { count: Object.keys(sockets).length });
       }   
     }
 
     function leaveQueue() {
       delete sockets[socket.name];
       for (var i in sockets) {
-        sockets[i].emit('findEnemy', { count: Object.keys(sockets).length });
+        sockets[i].emit('enemyCount', { count: Object.keys(sockets).length });
       }
     }
 

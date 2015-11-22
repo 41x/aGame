@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('auth', [])
-  .factory('Auth', function($http, $q, AuthToken) {
+  .factory('Auth', function($http, $cacheFactory, $q, AuthToken, player) {
     var authFactory = {};
 
     authFactory.login = function(username, password) {
@@ -20,6 +20,8 @@ angular.module('auth', [])
 
     authFactory.logout = function() {
       AuthToken.setToken();
+      player.clear();
+      $cacheFactory.get('$http').removeAll();
     };
 
     authFactory.isLoggedIn = function() {

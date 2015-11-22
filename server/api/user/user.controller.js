@@ -57,7 +57,7 @@ module.exports.me = function(req, res) {
     .exec(function(err, user) {
       if (err) return next(err);
       if (!user) return res.status(401).send('Unauthorized');
-
+      console.log('me: ' + user.name);
       res.json(user);
     });
 };

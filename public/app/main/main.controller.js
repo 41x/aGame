@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('main', [])
-  .controller('mainController', function($rootScope, $location, Auth) {
+  .controller('mainController', function($rootScope, $location, Auth, player) {
     var vm = this;
 
     vm.loggedIn = Auth.isLoggedIn();
@@ -9,8 +9,6 @@ angular.module('main', [])
     vm.decks = [];
     vm.hasDecks = false;
     vm.selectedDeck = {};
-
-
 
     Auth.getUser()
         .then(function(success) {
@@ -21,11 +19,11 @@ angular.module('main', [])
         });
 
     vm.play = function() {
-      if (vm.selectedDeck != {}) {
-        var count = 0;
-        for (var card in vm.selectedDeck.cards) {
-
-        }
+      if (vm.selectedDeck != {} && vm.user) {
+        player.setInfo({
+          name: vm.user.name,
+          deck: vm.selectedDeck
+        });
         $location.path('/queue');
       }
     }

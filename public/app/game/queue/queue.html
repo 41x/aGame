@@ -1,9 +1,19 @@
 <div class="container">
   <div class="jumbotron">
-  <h1>{{queue.user.name}}</h1>
-  <div class="container">
-    <h2>
-      Players: {{queue.count}}
-    </h2>
+    <h1>{{queue.player.name}}</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <h2>
+          Players: {{queue.count}}
+        </h2>
+      </div>
+      <div class="col-md-8">
+        <h4>{{queue.player.deck.name}}</h4>
+        <ul>
+          <li ng-repeat="c in queue.player.deck.cards">
+            {{c.card.name}} x{{c.count}}
+          </li>
+        </ul>
+      </div>
   </div>
 </div>

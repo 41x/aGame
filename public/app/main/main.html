@@ -15,7 +15,12 @@
           </button>
       </div>
       <div class="col-md-8">
-        {{main.selectedDeck}}
+        <h4>{{main.selectedDeck.name}}</h4>
+        <ul>
+          <li ng-repeat="c in main.selectedDeck.cards">
+            {{c.card.name}} x{{c.count}}
+          </li>
+        </ul>
       </div>
   </div>
 
