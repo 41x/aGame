@@ -1,5 +1,7 @@
 'user strict';
 
+var Game = require('./game.js');
+
 var sockets = {};
 
 module.exports = function(io) {
@@ -8,7 +10,9 @@ module.exports = function(io) {
       sockets[socket.name] = socket;
       for (var i in sockets) {
         sockets[i].emit('enemyCount', { count: Object.keys(sockets).length });
-      }   
+      } 
+
+
     }
 
     function leaveQueue() {
@@ -16,6 +20,10 @@ module.exports = function(io) {
       for (var i in sockets) {
         sockets[i].emit('enemyCount', { count: Object.keys(sockets).length });
       }
+    }
+
+    function removeAllListeners() {
+      
     }
 
     socket.on('enter', function(data) {

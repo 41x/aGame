@@ -12,6 +12,7 @@ var CardSchema   = new Schema({
   power: [String],
   health: Number,
   attack: Number,
+  cost: Number,
   img: String
 });
 
