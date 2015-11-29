@@ -22,6 +22,8 @@ angular.module('main', [])
       if (vm.selectedDeck != {} && vm.user) {
         player.setInfo({
           name: vm.user.name,
+          wins: vm.user.wins,
+          games: vm.user.games,
           deck: vm.selectedDeck
         });
         $location.path('/queue');

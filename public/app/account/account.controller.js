@@ -5,14 +5,12 @@ angular.module('account', [])
     var vm = this;
 
     vm.loggedIn = Auth.isLoggedIn();
-    console.log('account controller');
     $rootScope.$on('$routeChangeStart', function() {
       vm.loggedIn = Auth.isLoggedIn();
 
       if (!vm.loggedIn) return;
       Auth.getUser()
         .then(function(success) {
-          console.log(success.data);
           vm.user = success.data;
         }, function(err) {
           $location.path('login');

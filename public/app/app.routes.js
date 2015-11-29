@@ -18,6 +18,11 @@ angular.module('appRoutes', ['ngRoute'])
         controller: 'queueController',
         controllerAs: 'queue'        
       })
+      .when('/game', {
+        templateUrl: 'app/game/core/game.html',
+        controller: 'gameController',
+        controllerAs: 'game'        
+      })
       ;
 
     $locationProvider.html5Mode(true);

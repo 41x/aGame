@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('game')
+angular.module('core')
   .service('player', function(){
     this.info = {};
 

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('game')
+angular.module('core')
   .factory('socket', ['$rootScope', function ($rootScope) {
     var socket = io.connect();
     console.log("socket created");

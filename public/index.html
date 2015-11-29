@@ -11,8 +11,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+
   <link rel="stylesheet" href="assets/css/main.css">
-  
+  <link rel="stylesheet" href="app/game/core/arena.css">
+  <link rel="stylesheet" href="app/game/core/card.css">  
+
   <script src="https://cdn.socket.io/socket.io-1.3.7.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-route.js"></script>
@@ -23,6 +26,7 @@
   <script src="app/account/account.controller.js"></script>
   <script src="app/main/main.controller.js"></script>
   <script src="app/game/queue/queue.controller.js"></script>
+  <script src="app/game/core/game.controller.js"></script>
   <script src="app/game/socket.js"></script>
   <script src="app/game/player.service.js"></script>
 
@@ -58,7 +62,7 @@
             <a href="/signup">SignUp</a>
           </li>
           <li ng-if="account.loggedIn" class="navbar-text">
-            Hello {{ account.user.name }}
+            <span>Hello {{ account.user.name }}</span>
           </li>
           <li ng-if="account.loggedIn" ng-click="account.doLogout()">
             <a href="/login">SignOut</a>

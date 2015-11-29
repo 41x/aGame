@@ -1,7 +1,25 @@
 header .navbar    { 
-  border-radius:0;
+  margin: 0px;
+  min-height: 20px;
+  height: 20px;
+}
+
+body, html {
+  margin: 0px;
+  padding: 0px;
 }
 
 .jumbotron {
   padding: 30px;
 }
+
+
+.navbar {
+  min-height:28px !important;
+  height: 28px !important;
+}
+
+.navbar-nav a { padding-top: 5px !important; padding-bottom: 5px !important; }
+.navbar-nav .navbar-text {  margin-top: 5px !important; }
+.navbar { min-height: 32px !important; margin-bottom: 5px !important;}
+.navbar-brand { padding-top: 5px; padding-bottom: 10px; padding-left: 10px; }

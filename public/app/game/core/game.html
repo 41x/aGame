@@ -1,0 +1,109 @@
+
+<div class="container arena">
+  <div class="container part-header">
+    <div class="subpart-header subpart-header-enemy">
+      <div class="header-acc ">
+        <h3>{{game.enemy.name}}</h3>
+        <h5>Wins: {{game.enemy.wins}} / {{game.enemy.games}}</h5>
+      </div>
+      <div class="header-info">
+        <div class="info-prop info-prop-at">
+          <i class="fa fa-heart fa-2" ></i>
+          <span>{{game.enemy.health}}</span>
+        </div>
+
+        <div class="info-prop info-prop-at">
+          <i class="fa fa-usd fa-2" ></i>
+          <span>{{game.enemy.mp}}</span>
+        </div>
+
+        <div class="info-prop info-prop-at">
+          <i class="fa fa-align-justify fa-2" ></i>
+          <span>{{game.enemy.cards}}</span>
+        </div>
+      </div>
+
+      <div class="header-logo">
+        <div class="hero">
+          <img src="https://www.placecage.com/c/100/100">
+        </div>
+      </div>
+
+      <div class="header-other">
+        <h2>Hand: {{game.enemy.handCount}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container part part-arena-enemy">
+    <div class="arena-cards">    
+    </div>  
+  </div>
+  <div class="container part part-arena-me">
+    <div class="arena-cards">    
+    </div>  
+  </div>
+
+   <div class="container part-header">
+    <div class="subpart-header">
+      <div class="header-acc ">
+        <h3>{{game.me.name}}</h3>
+        <h5>Wins: {{game.me.wins}} / {{game.me.games}}</h5>
+      </div>
+      <div class="header-info">
+        <div class="info-prop info-prop-at">
+          <i class="fa fa-heart fa-2" ></i>
+          <span>{{game.me.health}}</span>
+        </div>
+
+        <div class="info-prop info-prop-at">
+          <i class="fa fa-usd fa-2" ></i>
+          <span>{{game.me.mp}}</span>
+        </div>
+
+        <div class="info-prop info-prop-at">
+          <i class="fa fa-align-justify fa-2" ></i>
+          <span>{{game.me.cards}}</span>
+        </div>
+      </div>
+
+      <div class="header-logo">
+        <div class="hero">
+          <img src="https://www.placecage.com/c/100/100">
+        </div>
+      </div>
+
+      <div class="header-other">
+        <button type="button" class="btn btn-lg btn-primary">End Turn</button>
+      </div>
+    </div>
+
+  </div>
+  <div class="container part">
+    <div class="deck">    
+      <div class="xcard unselectable" ng-repeat="card in game.me.hand">
+        <div class="xcard-prop xcard-prop-mp">
+            <i class="fa fa-usd"></i>
+            <span>{{card.cost}}</span>
+          </div>
+        <div class="xcard-header">
+          <span class="xcard-name">{{card.name}}</span>
+        </div>
+        <img src="http://placehold.it/100x70">
+        
+        <div class="xcard-power">{{card.power}}</div>
+
+        <div class="xcard-props">
+          <div class="xcard-prop xcard-prop-at">
+            <i class="fa fa-bolt" ></i>
+            <span>{{card.attack}}</span>
+          </div>
+
+          <div class="xcard-prop xcard-prop-hp">
+            <i class="fa fa-heart"></i>
+            <span>{{card.health}}</span>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>

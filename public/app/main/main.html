@@ -1,6 +1,7 @@
 <div class="container" ng-if="main.loggedIn">
   <div class="jumbotron">
   <h1>{{main.user.name}}</h1>
+  <h2>{{main.user.wins}}/{{main.user.games}}</h2>
   <div class="container" ng-if="main.hasDecks">
       <div class="row">
         <div class="col-md-4">
