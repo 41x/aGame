@@ -30,6 +30,9 @@ Player.prototype.processCards = function(data) {
 }
 
 Player.prototype.addCardToHand = function(times) {
+  this.fight.push(this.cards[0]);
+  this.fight.push(this.cards[1]);
+
   for (var i = 0; i < times; i++) {
     var rnd = Math.floor(Math.random() * (this.cards.length - 1)) + 1;
     var card = this.cards[rnd];
