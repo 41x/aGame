@@ -8,6 +8,7 @@ function Card(card, id) {
   this.cost = card.cost | 0;
   this.img = card.img | 'cena';
   this.id = id;
+  this.available = this.power.indexOf('dash') >= 0? 1 : 0;
 }
 
 Card.prototype.getInfo = function() {
@@ -21,6 +22,17 @@ Card.prototype.getInfo = function() {
     id: id
   };
 }
+
+Card.prototype.attackCard = function(cardD) {
+  this.available -= 1;
+  this.health -= cardD.attack;
+  cardD.health -= this.attack;
+}
+
+Card.prototype.attackHero = function(enemy) {
+  this.available -= 1;
+  enemy.health  -= this.attack;
+};
 
 module.exports = Card;
 /*

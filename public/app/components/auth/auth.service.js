@@ -18,6 +18,10 @@ angular.module('auth', [])
         });
     };
 
+    authFactory.resetCache = function() {
+      $cacheFactory.get('$http').removeAll();
+    };
+
     authFactory.logout = function() {
       AuthToken.setToken();
       player.clear();

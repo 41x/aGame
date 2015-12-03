@@ -6,7 +6,7 @@ angular.module('core', [])
     socket.init();
 
     vm.player = player.getInfo();
-
+    socket.emit('queueConnect');
     socket.emit('queueEnter', vm.player);
 
     vm.isFindGame = false;

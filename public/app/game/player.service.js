@@ -3,6 +3,7 @@
 angular.module('core')
   .service('player', function(){
     this.info = {};
+    console.log('recreated');
 
     return {
       setInfo: function(_info) {
@@ -21,6 +22,5 @@ angular.module('core')
         this.info = {};
         localStorage['player.info'] = '';
       }
-
     };
   });

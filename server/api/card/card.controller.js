@@ -15,7 +15,7 @@ module.exports.index = function(req, res) {
 };
 
 module.exports.create = function(req, res) {
-  if ((!req.body.name && req.body.password))
+  if (!(req.body.name && req.body.health))
     return validationError(res, { message: 'No parameters' });
 
   var card = new Card();
@@ -23,6 +23,9 @@ module.exports.create = function(req, res) {
   card.name = req.body.name;
   card.health = req.body.health;
   card.attack = req.body.attack;
+  card.cost = req.body.cost;
+  if (req.body.power) card.power= req.body.power.split(' ');
+  card.img= req.body.img;
 
   card.save(function(err, card) {
     if (err) validationError(res, err);
