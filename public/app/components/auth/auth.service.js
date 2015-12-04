@@ -61,7 +61,7 @@ angular.module('auth', [])
     return authTokenFactory;
   })
 
-  .factory('AuthInterceptor', function($q, AuthToken) {
+  .factory('AuthInterceptor', function($q, $location, AuthToken) {
     var interceptorFactory = {};
 
     interceptorFactory.request = function(config) {

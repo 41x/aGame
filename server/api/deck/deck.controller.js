@@ -50,10 +50,10 @@ module.exports.destroyDeck = function(req, res) {
 module.exports.addCard = function(req, res) {
     Card.findById(req.params.cardId, function(err, card) {
       if (err) return validationError(res, err);
-      if (!card) return res.status(401).send('No such card');
+      if (!card) return res.status(404).send('No such card');
       
       var deck = req.user.decks.id(req.params.deckId);
-      if (!deck) return res.status(401).send('No Deck');
+      if (!deck) return res.status(404).send('No Deck');
 
       var isExists = false;
 
