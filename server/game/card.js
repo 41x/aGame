@@ -6,9 +6,10 @@ function Card(card, id) {
   this.health = card.health;
   this.attack = card.attack;
   this.cost = card.cost | 0;
-  this.img = card.img | 'cena';
+  this.img = card.img;
   this.id = id;
-  this.available = this.power.indexOf('dash') >= 0? 1 : 0;
+  this.available = this.power.indexOf('dash') >= 0? 
+    (this.power.indexOf('windfury') >= 0? 2 : 1) : 0;
 }
 
 Card.prototype.getInfo = function() {
@@ -25,13 +26,53 @@ Card.prototype.getInfo = function() {
 
 Card.prototype.attackCard = function(cardD) {
   this.available -= 1;
-  this.health -= cardD.attack;
-  cardD.health -= this.attack;
+  if (!this.checkHS()) this.health -= cardD.attack;
+  if (!cardD.checkHS()) cardD.health -= this.attack;
 }
 
 Card.prototype.attackHero = function(enemy) {
   this.available -= 1;
   enemy.health  -= this.attack;
+};
+
+Card.prototype.prePlayPowers = function(player, enemy) {
+  if (this.power.indexOf('dest') != -1) {
+    enemy.fight= [];
+    player.fight = [];
+  }
+
+  if (this.power.indexOf('cardBonus') != -1) {
+    player.addCardToHand(1);
+  }
+
+  if (this.power.indexOf('attackBonus-2') != -1) {
+    for (var i = 0; i < player.fight.length; i++) {
+      player.fight[i].attack += 2;
+    }
+  }
+
+  if (this.power.indexOf('healthBonus-2') != -1) {
+    for (var i = 0; i < player.fight.length; i++) {
+      player.fight[i].health += 2;
+    }
+  }
+};
+
+Card.prototype.preTurnPowers = function(player, enemy) {
+  if (this.power.indexOf('windfury') != -1) {
+    this.available = 2;
+  }
+};
+
+Card.prototype.checkHS = function() {
+  var i = this.power.indexOf('holy-shield');
+
+  if (i != -1) {
+    console.log(i);
+    var e = this.power.splice(i, 1);
+    console.log(e);
+    return true;
+  }
 };
 
 module.exports = Card;

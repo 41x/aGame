@@ -26,14 +26,10 @@ Player.prototype.processCards = function(data) {
   for (var i = 0; i < deck.cards.length; i++) {
     var cardInfo = deck.cards[i];
     for (var j = 0; j < cardInfo.count; j++) {
-      this.cards.push(new Card(cardInfo.card, id++));
+      var ncard = new Card(cardInfo.card, id++);
+      this.cards.push(ncard);
     }
   }
-  var test = [];
-  for (var i = 0; i < this.cards.length; i++) {
-    test.push(this.cards[i].id);
-  }
-  console.log(test);
 };
 
 Player.prototype.setTurn = function() {
@@ -43,6 +39,7 @@ Player.prototype.setTurn = function() {
     this.turn = true;
     for (var i = 0; i < this.fight.length; i++) {
       this.fight[i].available = 1;
+      this.fight[i].preTurnPowers();
     }
     if (this.mp < 10)
       this.mp++;
@@ -60,12 +57,12 @@ Player.prototype.addCardToHand = function(times) {
   }
 };
 
-Player.prototype.playCard = function(cardId) {
+Player.prototype.playCard = function(cardId, enemy) {
   if (this.fight.length >= 8) return;
   for (var i = 0; i < this.hand.length; i++) {
     if (this.hand[i].id == cardId && this.hand[i].cost <= this.currentMp ) {
         this.currentMp -= this.hand[i].cost;
-
+        this.hand[i].prePlayPowers(this, enemy)
         this.fight.push(this.hand[i]);
         this.hand.splice(i, 1);
         return;
@@ -114,6 +111,8 @@ Player.prototype.getPrivateInfo = function() {
     fight: this.fight,
     cards: this.cards.length
   };
+
+
 };
 
 Player.prototype.getPublicInfo = function() {

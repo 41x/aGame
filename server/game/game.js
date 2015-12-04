@@ -35,24 +35,28 @@ Game.prototype.nextTurn = function(name) {
 
 Game.prototype.playCard = function(name, cardId) {
   var player = this.players[name];
-  if (!player.turn) return;
-  player.playCard(cardId);
+  var enemy = this.players[player.enemy];
 
+  if (!player.turn) return;
+
+  player.playCard(cardId, enemy);
   this.sendInfoAll(name);
 };
 
 Game.prototype.attackCard = function(name, info) {
   var player = this.players[name];
   var enemy = this.players[player.enemy];
+  
   if (!player.turn) return;
+  
   player.attackCard(enemy, info); 
-
-  this.sendInfoAll(name);
+  this.sendInfoAll(name, info);
 };
 
 Game.prototype.attackHero = function(name, info) {
   var player = this.players[name];
   var enemy = this.players[player.enemy];
+  
   if (!player.turn) return;
   player.attackHero(enemy, info); 
 
@@ -60,24 +64,28 @@ Game.prototype.attackHero = function(name, info) {
     return this.gameOver(player.name, enemy.name);
   }
 
-  this.sendInfoAll(name);
+  this.sendInfoAll(name, info);
 };
 
-Game.prototype.sendInfoAll = function(name) {
+Game.prototype.sendInfoAll = function(name, attackInfo) {
   var player = this.players[name];
   var enemy = this.players[player.enemy];
-
-  this.sendInfo(player, enemy);
-  this.sendInfo(enemy, player);
+  
+  this.sendInfo(player, enemy, attackInfo);
+  this.sendInfo(enemy, player, attackInfo);
 };
 
-Game.prototype.sendInfo = function(player, enemy) {
-  player.socket.emit('gameInfo', {
+Game.prototype.sendInfo = function(player, enemy, attackInfo) {
+  var info =  {
     turn: player.turn,
     name: player.name,
     me: player.getPrivateInfo(),
-    enemy: enemy.getPublicInfo()
-  }); 
+    enemy: enemy.getPublicInfo(),
+  };
+
+  if (attackInfo) info['attackInfo'] = attackInfo;
+
+  player.socket.emit('gameInfo', info); 
 };
 
 Game.prototype.enter = function(name) {

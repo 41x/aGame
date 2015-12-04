@@ -18,6 +18,11 @@ angular.module('appRoutes', ['ngRoute'])
         controller: 'queueController',
         controllerAs: 'queue'        
       })
+      .when('/deck', {
+        templateUrl: 'app/deck/deck.html',
+        controller: 'deckController',
+        controllerAs: 'decker'        
+      })
       .when('/game', {
         templateUrl: 'app/game/core/game.html',
         controller: 'gameController',

@@ -8,7 +8,8 @@ var app = angular.module('aGameApp', [
   'auth',
   'account',
   'main',
-  'core'
+  'core',
+  'deck'
 ])
   .config(function($httpProvider) {
     $httpProvider.interceptors.push('AuthInterceptor');

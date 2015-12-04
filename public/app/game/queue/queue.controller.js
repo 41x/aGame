@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('core', [])
+angular.module('core', ['ngAnimate'])
   .controller('queueController', function($scope, $rootScope, $location, Auth, socket, player) {
     var vm = this;
     socket.init();

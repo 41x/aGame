@@ -15,7 +15,7 @@ angular.module('core')
     };
 
     vm.availableClass = function(card) {
-      if (card.id == toAttack) return 'xcard-attack'
+      if (card.id == toAttack) return 'xcard-attack';
       if (card.available > 0) return 'xcard-available';
     };
 
@@ -26,7 +26,7 @@ angular.module('core')
 
       socket.emit('attackCard', { from: toAttack, to: card.id })
       toAttack = -1;
-    }
+    };
 
 
     vm.attackHero= function() {
@@ -35,7 +35,7 @@ angular.module('core')
 
       socket.emit('attackHero', { from: toAttack })
       toAttack = -1;
-    }
+    };
 
     vm.selectToAttack= function(card) {
       if (!vm.turn || card.available <= 0) return;
@@ -44,14 +44,9 @@ angular.module('core')
       toAttack = card.id;
     };
 
-    vm.attack = function(card) {
-
-    }
-
     vm.nextTurn = function() {
       if (!vm.turn) return;
       toAttack = -1;
-      console.log('next turn');
       socket.emit('gameNextTurn', {});
     };
 
@@ -63,7 +58,6 @@ angular.module('core')
     };
 
     socket.on('gameInfo', function(data) {
-      console.log('game info');
       player.setInfo(data);
       vm.player = player.getInfo();
       vm.enemy = vm.player.enemy;
@@ -77,7 +71,6 @@ angular.module('core')
       player.clear();
       $location.path('/');
     });
-    console.log(socket);
 
     socket.emit('gameEnter', vm.player);
 
