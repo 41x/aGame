@@ -76,10 +76,12 @@ module.exports.addCard = function(req, res) {
 module.exports.remCard = function(req, res) {
     Card.findById(req.params.cardId, function(err, card) {
       if (err) return validationError(res, err);
-      if (!card) return res.status(401).send('No such card');
+      console.log(card);
+      if (!card) return res.status(404).send('No such card');
 
       var deck = req.user.decks.id(req.params.deckId);
-      if (!deck) return res.status(401).send('No Deck');
+      console.log(deck);
+      if (!deck) return res.status(404).send('No Deck');
 
       deck.cards.forEach(function(el) {
         if (String(el.card) == String(card._id)) {
