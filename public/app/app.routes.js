@@ -22,19 +22,18 @@ angular.module('appRoutes', ['ngRoute'])
         templateUrl: 'app/deck/deck.html',
         controller: 'deckController',
         controllerAs: 'decker'        
+
       })
       .when('/game', {
         templateUrl: 'app/game/core/game.html',
         controller: 'gameController',
         controllerAs: 'game'
       })
-
       .when('/signup', {
         templateUrl: 'app/account/signup/signup.html',
         controller: 'accountController',
         controllerAs: 'login'
       })
-
     ;
 
     $locationProvider.html5Mode(true);
