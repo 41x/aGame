@@ -1,29 +1,35 @@
-<div class="row col-sm-6 col-sm-offset-3">
-  <div class="jumbotron">
-    <h1>Sign Up</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>aGame - Sigh Up</title>
+    <!-- Bootstrap core CSS -->
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link href="./signup.css" rel="stylesheet">
 
-    <form ng-submit="login.doLogin()">
-      <div class="form-group">
-        <label>Username</label>
-        <input type="text" class="form-control" ng-model="login.loginData.username">
-      </div>
+  </head>
 
-      <div class="form-group">
-        <label>Password</label>
-        <input type="password" class="form-control" ng-model="login.loginData.password">
-      </div>
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" ng-submit="login.doLogin()">
+        <h2 class="form-signin-heading">Create your aGame Account</h2>
+        <label for="inputUsername" class="sr-only">Username</label>
+        <input type="username" id="inputUsername" class="form-control" placeholder="Username"
+               ng-model="login.loginData.username" required autofocus >
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control"
+               ng-model="login.loginData.password" placeholder="Password" required>
+		<label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
+        <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
     
-
-      <button type="submit" class="btn btn-block btn-primary">
-       <span ng-if="!login.processing">Login</span> 
-       <span ng-if="login.processing" class="spinner">
-         <span class="glyphicon glyphicon-repeat"></span>
-       </span>
-      </button>
-
-      <div class="alert alert-danger" ng-if="login.error">
-        {{ login.error }}
-      </div>
-    </form>
-  </div>
-</div>
+  </body>
+</html>

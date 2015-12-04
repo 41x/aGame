@@ -16,7 +16,7 @@ angular.module('appRoutes', ['ngRoute'])
       .when('/queue', {
         templateUrl: 'app/game/queue/queue.html',
         controller: 'queueController',
-        controllerAs: 'queue'        
+        controllerAs: 'queue'
       })
       .when('/deck', {
         templateUrl: 'app/deck/deck.html',
@@ -26,9 +26,16 @@ angular.module('appRoutes', ['ngRoute'])
       .when('/game', {
         templateUrl: 'app/game/core/game.html',
         controller: 'gameController',
-        controllerAs: 'game'        
+        controllerAs: 'game'
       })
-      ;
+
+      .when('/signup', {
+        templateUrl: 'app/account/signup/signup.html',
+        controller: 'accountController',
+        controllerAs: 'login'
+      })
+
+    ;
 
     $locationProvider.html5Mode(true);
   });
