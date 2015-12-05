@@ -20,7 +20,7 @@ app.server = server.listen(config.port, function() {
 
 var io = require('socket.io').listen(app.server);
 
-mongoose.connect(config.database); 
+mongoose.connect(config.database);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -45,5 +45,3 @@ require('./server/game')(io);
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname + '/public/index.html'));
 });
-
-

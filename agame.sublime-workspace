@@ -1,0 +1,1583 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"co",
+				"cookieParser (fn/0)"
+			],
+			[
+				"d",
+				"debugger (?)"
+			],
+			[
+				"pa",
+				"path (?)"
+			],
+			[
+				"s",
+				"s (str)"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"f",
+				"fe	forEach"
+			],
+			[
+				"ex",
+				"express"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"$lo",
+				"$location	AngularJS"
+			],
+			[
+				"selec",
+				"selectedDeck"
+			],
+			[
+				"sele",
+				"selectedDeck"
+			],
+			[
+				"deck",
+				"decker"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"t",
+				"this"
+			],
+			[
+				"att",
+				"attackInfo"
+			],
+			[
+				"at",
+				"attackInfo"
+			],
+			[
+				"car",
+				"cardD〔variable〕"
+			],
+			[
+				"card",
+				"cardId"
+			],
+			[
+				"pl",
+				"playCard"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"bord",
+				"border-color"
+			],
+			[
+				"ca",
+				"cardId"
+			],
+			[
+				"sen",
+				"sendInfoAll"
+			],
+			[
+				"pla",
+				"playCard"
+			],
+			[
+				"game",
+				"games"
+			],
+			[
+				"loos",
+				"looser〔variable〕"
+			],
+			[
+				"loo",
+				"looserName〔argument〕"
+			],
+			[
+				"winn",
+				"winnerName〔argument〕"
+			],
+			[
+				"Sen",
+				"sendInfoAll〔function〕"
+			],
+			[
+				"fun",
+				"function〔keyword〕"
+			],
+			[
+				"pro",
+				"processCards〔function〕"
+			],
+			[
+				"h",
+				"health〔variable〕"
+			],
+			[
+				"get",
+				"getInfo"
+			],
+			[
+				"add",
+				"addOnEnter"
+			],
+			[
+				"win",
+				"wins〔variable〕"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"socke",
+				"socket〔argument〕"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"inli",
+				"inline-block"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"$htt",
+				"$httpProvider〔argument〕"
+			],
+			[
+				"ng-re",
+				"ng-repeat	AngularJS"
+			],
+			[
+				"str",
+				"stringify"
+			],
+			[
+				"loca",
+				"localStorage"
+			],
+			[
+				"sel",
+				"selectedDeck"
+			],
+			[
+				"mo",
+				"module	AngularJS"
+			],
+			[
+				"sock",
+				"socket〔argument〕"
+			],
+			[
+				"rem",
+				"removeAllListeners"
+			],
+			[
+				"lea",
+				"leaveQueue"
+			],
+			[
+				"en",
+				"enterQueue"
+			],
+			[
+				"le",
+				"leaveQueue"
+			],
+			[
+				"config",
+				"config	AngularJS"
+			],
+			[
+				"Dec",
+				"DeckSchema〔variable〕"
+			],
+			[
+				"va",
+				"validationError"
+			],
+			[
+				"val",
+				"validationError〔function〕"
+			],
+			[
+				"find",
+				"findById"
+			],
+			[
+				"User",
+				"UserSchema"
+			],
+			[
+				"server",
+				"server.js"
+			],
+			[
+				"ht",
+				"html5	Simple HTML5 Boilerplate"
+			],
+			[
+				"$routeP",
+				"$routeParams	AngularJS"
+			],
+			[
+				"g",
+				"getUser"
+			],
+			[
+				"$root",
+				"$rootScope	AngularJS"
+			],
+			[
+				"$loca",
+				"$locationProvider	AngularJS"
+			],
+			[
+				"Aut",
+				"AuthToken〔argument〕"
+			],
+			[
+				"int",
+				"interceptorFactory〔variable〕"
+			],
+			[
+				"auth",
+				"authFactory〔variable〕"
+			],
+			[
+				"set",
+				"setToken"
+			],
+			[
+				"aut",
+				"authTokenFactory〔variable〕"
+			],
+			[
+				"au",
+				"authTokenFactory"
+			],
+			[
+				"a",
+				"authFactory"
+			],
+			[
+				"user",
+				"userFactory〔variable〕"
+			],
+			[
+				"body",
+				"bodyParser〔variable〕"
+			],
+			[
+				"$locati",
+				"$locationProvider	AngularJS"
+			],
+			[
+				"di",
+				"div	Tag"
+			],
+			[
+				"scri",
+				"script	Tag"
+			],
+			[
+				"comp",
+				"computerData"
+			],
+			[
+				"er",
+				"err"
+			],
+			[
+				"bod",
+				"bodyParser〔variable〕"
+			],
+			[
+				"admin",
+				"adminRouter〔variable〕"
+			],
+			[
+				"adm",
+				"adminRouter〔variable〕"
+			],
+			[
+				"exp",
+				"express〔variable〕"
+			],
+			[
+				"psot",
+				"postItem"
+			],
+			[
+				"Post",
+				"PostsListController"
+			],
+			[
+				"com",
+				"comments	(comments.js)"
+			],
+			[
+				"comm",
+				"commentAttributes"
+			],
+			[
+				"thro",
+				"throwError	(errors.js)"
+			],
+			[
+				"post",
+				"postAttributes"
+			],
+			[
+				"fin",
+				"findOne	(router.js)"
+			],
+			[
+				"loading",
+				"loadingTemplate"
+			],
+			[
+				"c",
+				"count	(fixtures.js)"
+			],
+			[
+				"nav",
+				"navbar"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"hea",
+				"header	<header>"
+			],
+			[
+				"he",
+				"header	<header>"
+			],
+			[
+				"cont",
+				"container	(style.css)"
+			],
+			[
+				"counter",
+				"counterx"
+			],
+			[
+				"cou",
+				"counterx"
+			],
+			[
+				"use",
+				"username"
+			],
+			[
+				"ses",
+				"sessionKey〔variable〕"
+			],
+			[
+				"dis",
+				"disconnect"
+			],
+			[
+				"loa",
+				"loadUser"
+			],
+			[
+				"lo",
+				"loadSession"
+			],
+			[
+				"cookie",
+				"cookieParser〔variable〕"
+			],
+			[
+				"par",
+				"parser"
+			],
+			[
+				"se",
+				"secret"
+			],
+			[
+				"sess",
+				"session"
+			],
+			[
+				"prin",
+				"printStatus"
+			],
+			[
+				"print",
+				"printMessage"
+			],
+			[
+				"sub",
+				"submit〔function〕"
+			],
+			[
+				"con",
+				"config〔variable〕"
+			],
+			[
+				"ch",
+				"checkAuth"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"n",
+				"next"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 103,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server.js",
+			"settings":
+			{
+				"buffer_size": 1318,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/game/game.js",
+			"settings":
+			{
+				"buffer_size": 4334,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/api/card/card.model.js",
+			"settings":
+			{
+				"buffer_size": 355,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "server/game/player.js",
+			"settings":
+			{
+				"buffer_size": 3327,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "descr",
+		"selected_items":
+		[
+			[
+				"descr",
+				"tern_for_sublime: Describe"
+			],
+			[
+				"desc",
+				"tern_for_sublime: Describe"
+			],
+			[
+				"tern",
+				"tern_for_sublime: Describe"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"upd",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"intel",
+				"Snippet: setInterval"
+			],
+			[
+				"upda",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"inte",
+				"SublimeCodeIntel: Enable Live Autocompletion for Current Language"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"git ",
+				"Git: Commit"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"git commit",
+				"Git: Quick Commit"
+			],
+			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"git dif",
+				"Git: Diff Current File"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			],
+			[
+				"req",
+				"Require"
+			],
+			[
+				"Packa",
+				"Package Control: Enable Package"
+			],
+			[
+				"disab",
+				"Package Control: Disable Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"oa",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"git di",
+				"Git: Diff Current File"
+			],
+			[
+				"com",
+				"Git: Commit"
+			],
+			[
+				"git",
+				"Git: Commit"
+			],
+			[
+				"Snippet: ",
+				"Snippet: #!/usr/bin/env"
+			],
+			[
+				"Paka",
+				"Package Control: Remove Package"
+			],
+			[
+				"",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"git:ad",
+				"Git: Diff All Files"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				":add",
+				"Git: Add..."
+			],
+			[
+				"syn",
+				"Set Syntax: HTML"
+			],
+			[
+				"List",
+				"Package Control: List Packages"
+			],
+			[
+				"pA",
+				"Package Control: List Packages"
+			],
+			[
+				"rEM",
+				"Package Control: Remove Package"
+			],
+			[
+				"rEMOVE",
+				"Package Control: Remove Package"
+			],
+			[
+				"Remove",
+				"Package Control: Remove Channel"
+			],
+			[
+				"Su",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"SublimeLinter",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"Ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Subl",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"Sublime",
+				"SublimeLinter: Next Error"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"In",
+				"Package Control: Install Package"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Pak I",
+				"Package Control: Install Package"
+			],
+			[
+				"Open",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"packa in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package I",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 507.0
+	},
+	"console":
+	{
+		"height": 255.0,
+		"history":
+		[
+			"ll",
+			"node",
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/yond/workspace/aGame",
+		"/home/yond/workspace/aGame/server",
+		"/home/yond/workspace/aGame/server/api",
+		"/home/yond/workspace/aGame/server/api/card",
+		"/home/yond/workspace/aGame/server/game"
+	],
+	"file_history":
+	[
+		"/home/yond/workspace/aGame/server.js",
+		"/home/yond/workspace/aGame/.gitignore",
+		"/home/yond/workspace/aGame/agame.sublime-project",
+		"/home/yond/workspace/aGame/server/game/player.js",
+		"/home/yond/workspace/aGame/server/game/card.js",
+		"/home/yond/workspace/aGame/public/app/game/core/game.controller.js",
+		"/home/yond/workspace/aGame/server/game/game.js",
+		"/home/yond/workspace/aGame/server/routes.js",
+		"/home/yond/workspace/aGame/.term-project",
+		"/home/yond/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/yond/workspace/aGame/.tern-project",
+		"/home/yond/.config/sublime-text-3/Packages/User/Tern.sublime-settings",
+		"/home/yond/.config/sublime-text-3/Packages/tern_for_sublime/Tern.sublime-keymap",
+		"/home/yond/workspace/testMean/agame.sublime-project",
+		"/home/yond/.config/sublime-text-3/Packages/User/Package Control.sublime-settings",
+		"/home/yond/workspace/aGame/public/app/main/main.controller.js",
+		"/home/yond/workspace/aGame/server/api/deck/deck.route.js",
+		"/home/yond/workspace/aGame/public/index.html",
+		"/home/yond/workspace/aGame/public/app/deck/deck.html",
+		"/home/yond/workspace/aGame/public/app/components/auth/auth.service.js",
+		"/home/yond/workspace/aGame/server/api/deck/deck.controller.js",
+		"/home/yond/workspace/aGame/public/app/deck/deck.controller.js",
+		"/home/yond/workspace/aGame/public/app/app.routes.js",
+		"/home/yond/Desktop/index.html",
+		"/home/yond/workspace/aGame/public/app/app.js",
+		"/home/yond/workspace/aGame/public/app/account/account.controller.js",
+		"/home/yond/workspace/aGame/public/app/game/queue/queue.controller.js",
+		"/home/yond/workspace/aGame/public/app/game/core/game.html",
+		"/home/yond/workspace/aGame/public/app/deck/deck.css",
+		"/home/yond/workspace/aGame/public/app/deck/deck.css~",
+		"/home/yond/workspace/aGame/server/game/io.js",
+		"/home/yond/workspace/aGame/public/app/game/core/card.css",
+		"/home/yond/workspace/aGame/public/app/game/core/arena.css",
+		"/home/yond/workspace/aGame/server/game/queue.js",
+		"/home/yond/workspace/aGame/public/app/game/socket.js",
+		"/home/yond/workspace/aGame/server/api/user/user.controller.js",
+		"/home/yond/workspace/aGame/server/auth/local/passport.js",
+		"/home/yond/workspace/aGame/public/app/game/player.service.js",
+		"/home/yond/workspace/aGame/server/api/card/card.controller.js",
+		"/home/yond/Dropbox/card.html",
+		"/home/yond/Dropbox/card.css",
+		"/home/yond/Dropbox/test.html",
+		"/home/yond/workspace/aGame/server/game/index.js",
+		"/home/yond/Dropbox/arena.html",
+		"/home/yond/workspace/aGame/public/assets/css/main.css",
+		"/home/yond/Dropbox/arena.css",
+		"/home/yond/workspace/aGame/public/app/main/main.html",
+		"/home/yond/workspace/aGame/server/api/card/card.model.js",
+		"/home/yond/workspace/aGame/public/app/game/queue/queue.html",
+		"/home/yond/workspace/aGame/server/api/deck/deck.model.js",
+		"/home/yond/workspace/aGame/public/app/game/game.controller.js",
+		"/home/yond/workspace/aGame/public/app/game/game.html",
+		"/home/yond/workspace/aGame/public/app/auth/auth.service.js",
+		"/home/yond/workspace/yochat/io.js",
+		"/home/yond/workspace/aGame/public/app/account/login/login.html",
+		"/home/yond/workspace/aGame/server/config.js",
+		"/home/yond/workspace/aGame/package.json",
+		"/home/yond/workspace/aGame/.bowerrc",
+		"/home/yond/workspace/aGame/public/assets/libs/test",
+		"/home/yond/workspace/aGame/server/auth/index.js",
+		"/home/yond/workspace/aGame/server/auth/auth.service.js",
+		"/home/yond/workspace/aGame/server/api/user/user.route.js",
+		"/home/yond/workspace/aGame/server/api/user/user.model.js",
+		"/home/yond/workspace/mean/yoMean/app/models/user.js",
+		"/home/yond/workspace/aGame/server/api/routes.js",
+		"/home/yond/workspace/aGame/server/auth/local/index.js",
+		"/home/yond/workspace/yochat/routes/chat.js",
+		"/home/yond/workspace/yochat/routes/frontpage.js",
+		"/home/yond/workspace/yochat/routes/login.js",
+		"/home/yond/workspace/yochat/routes/logout.js",
+		"/home/yond/workspace/yochat/routes/users.js",
+		"/home/yond/workspace/yochat/middleware/checkAuth.js",
+		"/home/yond/workspace/aGame/gulpfile.js",
+		"/home/yond/workspace/aGame/app/config.js",
+		"/home/yond/workspace/aGame/app/models/player.js",
+		"/home/yond/workspace/aGame/app/models/card.js",
+		"/home/yond/workspace/mean/yoMean/app/routes/api.js",
+		"/home/yond/workspace/aGame/public/app/views/index.html",
+		"/home/yond/workspace/mean/yoMean/config.js",
+		"/home/yond/workspace/mean/yoMean/server.js",
+		"/home/yond/workspace/yochat/middleware/loadUser.js",
+		"/home/yond/workspace/aGame/README.md~",
+		"/home/yond/workspace/testMean/config/middlewares/logging.js",
+		"/home/yond/workspace/mean/yoMean/public/app/views/pages/login.html",
+		"/home/yond/workspace/mean/yoMean/public/app/app.routes.js",
+		"/home/yond/workspace/mean/yoMean/public/app/controllers/mainCtrl.js",
+		"/home/yond/workspace/mean/yoMean/public/app/views/pages/users/all.html",
+		"/home/yond/workspace/mean/yoMean/public/app/app.js",
+		"/home/yond/workspace/mean/yoMean/public/assets/css/style.css",
+		"/home/yond/workspace/mean/yoMean/public/app/controllers/userCtrl.js",
+		"/home/yond/workspace/mean/yoMean/public/app/services/authService.js",
+		"/home/yond/workspace/mean/yoMean/public/app/views/index.html",
+		"/home/yond/workspace/mean/yoMean/public/app/views/pages/home.html",
+		"/home/yond/workspace/mean/yoMean/public/app/views/pages/users/single.html",
+		"/home/yond/workspace/mean/yoMean/public/app/services/userService.js",
+		"/home/yond/workspace/mean/yoMean/package.json",
+		"/home/yond/workspace/mean/app/server.js",
+		"/home/yond/Dropbox/YRectal0/YRectal/User.cs",
+		"/home/yond/workspace/mean/anode/public/css/style.css",
+		"/home/yond/workspace/mean/anode/public/views/index.html",
+		"/home/yond/workspace/mean/anode/public/js/app.js",
+		"/home/yond/workspace/mean/anode/public/views/pages/home.html",
+		"/home/yond/workspace/mean/anode/public/views/pages/contact.html",
+		"/home/yond/workspace/mean/anode/public/views/pages/about.html",
+		"/home/yond/workspace/mean/anode/server.js",
+		"/home/yond/workspace/mean/anode/public/js/app.routes.js",
+		"/home/yond/workspace/mean/anode/public/index.html",
+		"/home/yond/workspace/mean/anode/package.json",
+		"/home/yond/workspace/mean/angular/js/app.js",
+		"/home/yond/workspace/mean/angular/index.html",
+		"/home/yond/workspace/mean/test/server.js",
+		"/home/yond/workspace/mean/app/models/user.js",
+		"/home/yond/app.py",
+		"/home/yond/workspace/mean/app/package.json",
+		"/home/yond/workspace/yochat/libs/mongoose.js",
+		"/home/yond/workspace/mean/test/package.json",
+		"/home/yond/workspace/yochat/models/user.js",
+		"/home/yond/workspace/yochat/createDb.js",
+		"/home/yond/workspace/mean/test/index.html",
+		"/home/yond/workspace/scoper/client/helpers/header.js",
+		"/home/yond/workspace/scoper/client/views/posts/posts_list.js",
+		"/home/yond/workspace/scoper/client/views/posts/posts_list.html",
+		"/home/yond/workspace/scoper/client/views/posts/post_item.html",
+		"/home/yond/workspace/scoper/client/views/posts/post_item.js",
+		"/home/yond/workspace/scoper/client/views/posts/post_edit.js",
+		"/home/yond/workspace/scoper/client/views/includes/header.html",
+		"/home/yond/workspace/scoper/lib/router.js",
+		"/home/yond/workspace/scoper/server/publications.js"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"id",
+			"console",
+			"consol",
+			"main",
+			"valid",
+			"userRouter",
+			"nope",
+			"spec",
+			"cry",
+			"succes",
+			"ngView",
+			"disab",
+			"PostsListCo",
+			"dataNot",
+			"curr"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"account",
+			"router",
+			"success"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 103,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								103,
+								103
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1079,
+								1079
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content"
+							],
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "server/game/game.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4334,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								660,
+								660
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "server/api/card/card.model.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								294,
+								122
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "server/game/player.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								398,
+								398
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 69.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 140.0
+	},
+	"pinned_build_system": "Packages/Nodejs/Nodejs.sublime-build",
+	"project": "agame.sublime-project",
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"comjs",
+				"client/views/comments/comment.js"
+			],
+			[
+				"com",
+				"client/views/comments/comment.html"
+			],
+			[
+				"ro",
+				"lib/router.js"
+			],
+			[
+				"list",
+				"client/views/posts/post_list.js"
+			],
+			[
+				"",
+				"js/script.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/workspace/aGame/agame.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 319.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 3
+	}
+}

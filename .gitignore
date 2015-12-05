@@ -3,3 +3,5 @@ node_modules/
 node_modules/
 public/assets/libs/
 .idea/
+.term-project
+agame.sublime-project

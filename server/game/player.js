@@ -15,7 +15,6 @@ function Player(socket, data) {
   this.hand = [];
   this.fight = [];
   this.cards = [];
-
   this.processCards(data);
 }
 

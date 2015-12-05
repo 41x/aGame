@@ -14,22 +14,21 @@ function Game(players, queue) {
   }
 
   this.players[players[0].name].turn = true;
-    
+
   for (var i in this.players) {
     this.players[i].addCardToHand(5);
     this.players[i].socket.removeAllListeners('gameConnect');
     this.addOnAll(this.players[i].socket);
-  } 
+  }
 }
 
 Game.prototype.nextTurn = function(name) {
   var player = this.players[name];
   var enemy = this.players[player.enemy];
-
   if (!player.turn) return;
   
   player.setTurn();
-  enemy.setTurn(); 
+  enemy.setTurn();
   this.sendInfoAll(name);
 };
 
@@ -46,19 +45,19 @@ Game.prototype.playCard = function(name, cardId) {
 Game.prototype.attackCard = function(name, info) {
   var player = this.players[name];
   var enemy = this.players[player.enemy];
-  
+
   if (!player.turn) return;
-  
-  player.attackCard(enemy, info); 
+
+  player.attackCard(enemy, info);
   this.sendInfoAll(name, info);
 };
 
 Game.prototype.attackHero = function(name, info) {
   var player = this.players[name];
   var enemy = this.players[player.enemy];
-  
+
   if (!player.turn) return;
-  player.attackHero(enemy, info); 
+  player.attackHero(enemy, info);
 
   if (enemy.health <= 0) {
     return this.gameOver(player.name, enemy.name);
@@ -70,7 +69,7 @@ Game.prototype.attackHero = function(name, info) {
 Game.prototype.sendInfoAll = function(name, attackInfo) {
   var player = this.players[name];
   var enemy = this.players[player.enemy];
-  
+
   this.sendInfo(player, enemy, attackInfo);
   this.sendInfo(enemy, player, attackInfo);
 };
@@ -85,7 +84,7 @@ Game.prototype.sendInfo = function(player, enemy, attackInfo) {
 
   if (attackInfo) info['attackInfo'] = attackInfo;
 
-  player.socket.emit('gameInfo', info); 
+  player.socket.emit('gameInfo', info);
 };
 
 Game.prototype.enter = function(name) {

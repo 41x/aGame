@@ -14,4 +14,5 @@ router.delete('/:deckId', auth.isAuthenticated(), controller.destroyDeck);
 router.post('/:deckId/cards/:cardId', auth.isAuthenticated(), controller.addCard);
 router.delete('/:deckId/cards/:cardId', auth.isAuthenticated(), controller.remCard);
 
+
 module.exports = router;
