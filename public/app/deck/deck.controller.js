@@ -21,7 +21,7 @@ angular.module('deck', [])
     }
 
     vm.removeCard = function(card) {
-      $http.delete('/api/decks/' + vm.selectedDeck._id + '/cards/' + card._id)
+      $http.delete('/api/decks/' + vm.selectedDeck._id + '/cards/' + card.card._id)
         .then(function(success) {
           if (card.count == 1) {
             var i = vm.selectedDeck.cards.indexOf(card);
@@ -29,6 +29,29 @@ angular.module('deck', [])
           } else {
             card.count--;
           }
+        }, function(err) {
+          
+        });
+    }
+
+    vm.addCard = function(card) {
+      console.log(card);
+      $http.post('/api/decks/' + vm.selectedDeck._id + '/cards/' + card._id)
+        .then(function(success) {
+      
+          for (var i = 0; i < vm.selectedDeck.cards.length; i++) {
+            if (vm.selectedDeck.cards[i].card._id == card._id) {
+              vm.selectedDeck.cards[i].count++;
+              return
+            }
+          }
+          
+          vm.selectedDeck.cards.push({
+            card : card,
+            count : 1
+          });
+            //go
+          
         }, function(err) {
           
         });

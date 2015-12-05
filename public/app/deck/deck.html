@@ -32,7 +32,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="card in decker.cards">
+            <tr ng-repeat="card in decker.cards" ng-click="decker.addCard(card)">
               <td>{{card.name}}</td>
               <td>{{card.health}}</td>
               <td>{{card.attack}}</td>
