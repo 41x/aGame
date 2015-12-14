@@ -26,7 +26,7 @@ Game.prototype.nextTurn = function(name) {
   var player = this.players[name];
   var enemy = this.players[player.enemy];
   if (!player.turn) return;
-  
+
   player.setTurn();
   enemy.setTurn();
   this.sendInfoAll(name);
