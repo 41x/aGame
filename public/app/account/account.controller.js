@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('account', [])
-  .controller('accountController', function($rootScope, $location, Auth) {
+  .controller('accountController', function($rootScope, $location, Auth,$window) {
     var vm = this;
-
     vm.loggedIn = Auth.isLoggedIn();
+    
     $rootScope.$on('$routeChangeStart', function() {
       vm.loggedIn = Auth.isLoggedIn();
 
@@ -19,7 +19,6 @@ angular.module('account', [])
 
     vm.doLogin = function() {
       vm.processing = true;
-
       vm.error = '';
 
       Auth.login(vm.loginData.username, vm.loginData.password)
@@ -41,6 +40,18 @@ angular.module('account', [])
     }
 
     vm.doSignup = function() {
-      
+      vm.error = '';
+      if (vm.loginData.password!==vm.loginData.confirmPassword) {
+        vm.error='Пароли не совпадают';
+        return;
+      }
+
+      Auth.signup(vm.loginData.username, vm.loginData.password)
+      .success(function(data) {
+          vm.doLogin();
+      })
+      .error(function(err) {
+          vm.error = err.message;
+      });
     }
   });

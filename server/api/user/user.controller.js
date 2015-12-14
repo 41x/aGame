@@ -21,13 +21,16 @@ module.exports.create = function(req, res) {
   if (req.body.name == undefined || req.body.password == undefined)
     return validationError(res, { message: 'No parameters' });
 
-  var user = new User();
-
+  var user = new User(); 
   user.name = req.body.name;
   user.password = req.body.password;
   user.role = 'user';
+
   user.save(function(err, user) {
-    if (err) return validationError(res, err);
+    if (err) {
+      // console.log('save user error');
+      return validationError(res, err);
+    }
     res.json({ message: 'User created!' });
   });
 };

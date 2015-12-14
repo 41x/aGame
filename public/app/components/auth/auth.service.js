@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('auth', [])
-  .factory('Auth', function($http, $cacheFactory, $q, AuthToken, player) {
+  .factory('Auth', function($http, $cacheFactory, $q, AuthToken, player,$window) {
     var authFactory = {};
 
     authFactory.login = function(username, password) {
@@ -17,6 +17,35 @@ angular.module('auth', [])
           return err;
         });
     };
+
+    authFactory.signup = function(username, password) {
+      return $http.post('/api/users', {
+        name: username,
+        password: password
+      })
+        .success(function(data) {
+          return data;
+        })
+        .error(function(err) {
+//          $window.alert('fail')
+
+          return err;
+        });
+
+//      return $http.post('/api/users', {
+//        name: username,
+//        password: password
+//      })
+//        .success(function(data) {
+//          return data;
+//        })
+//        .error(function(err) {
+//          $window.alert('fail')
+//
+//          return err;
+//        });
+    };
+
 
     authFactory.resetCache = function() {
       $cacheFactory.get('$http').removeAll();
