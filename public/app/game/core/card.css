@@ -17,12 +17,12 @@
 
 
 .xcard:hover, .xcard-glow:focus, .xcard-glow:active {
-	box-shadow: 0 0 8px black;	
+	box-shadow: 0 0 8px black;
 }
 
 .xcard-available {
 	border-color: green;
-}	
+}
 
 .xcard-attack {
 	border-color: red;
@@ -34,10 +34,10 @@
 
 .xcard-unavailable {
 	border-color: red;
-}	
-	
+}
+
 .xcard-props {
-	display: -webkit-flex; 
+	display: -webkit-flex;
 	display: flex;
 }
 
@@ -50,15 +50,14 @@
 }
 
 
-.xcard-header { 
+.xcard-header {
 	font-size: 12px;
 }
 
 
 .xcard-power {
 	height: 20px;
-	line-height: 15px;
-	font-size: 10px;
+	font-size: 8px;
 }
 
 
@@ -87,16 +86,16 @@
 
 .xcard-prop-hp {
 	width: 50px;
-	margin-top: 5px;  
+	margin-top: 5px;
 	text-align: right;
 }
 
 
-.xcard-prop-mp { 
-	position: relative; 
+.xcard-prop-mp {
+	position: relative;
 	float: right;
 }
-.unselectable {   
+.unselectable {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;

@@ -21,7 +21,7 @@ angular.module('appRoutes', ['ngRoute'])
       .when('/deck', {
         templateUrl: 'app/deck/deck.html',
         controller: 'deckController',
-        controllerAs: 'decker'        
+        controllerAs: 'decker'
 
       })
       .when('/game', {
@@ -33,6 +33,11 @@ angular.module('appRoutes', ['ngRoute'])
         templateUrl: 'app/account/signup/signup.html',
         controller: 'accountController',
         controllerAs: 'login'
+      })
+      .when('/rating', {
+        templateUrl: 'app/rating/rating.html',
+        controller: 'ratingController',
+        controllerAs: 'rating'
       })
     ;
 

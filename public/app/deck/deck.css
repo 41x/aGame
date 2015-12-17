@@ -3,5 +3,12 @@
   padding-left: 30px;
   padding-right: 30px;
   background-color: #eee;
-  
+}
+
+.controller-margin {
+  margin: 5px;
+}
+
+.controller-width {
+  width: 100px;
 }

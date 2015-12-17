@@ -1,31 +1,41 @@
 <div class="container" ng-if="main.loggedIn">
-  <div class="jumbotron">
-  <h1>{{main.user.name}}</h1>
-  <h2>{{main.user.wins}}/{{main.user.games}}</h2>
-  <div class="container" ng-if="main.hasDecks">
-      <div class="row">
-        <div class="col-md-4">
-          <div>
-            <select name="selectDeck"
-                    ng-options="deck.name for deck in main.decks track by deck._id" 
-                    ng-model="main.selectedDeck">
-            </select>
-          </div>
-          <button type="button" class="btn btn-lg btn-primary" ng-hide="main.selectedDeck == {}" ng-click="main.play()">
-            Play
-          </button>
+
+  <div class="jumbotron" ng-hide="main.inGame">
+    <h1>{{main.user.name}}</h1>
+    <h2>{{main.user.wins}}/{{main.user.games}}</h2>
+    <div class="container" ng-if="main.hasDecks">
+        <div class="row">
+          <div class="col-md-4">
+            <div>
+              <select name="selectDeck"
+                      class="controller-margin"
+                      ng-options="deck.name for deck in main.decks track by deck._id"
+                      ng-model="main.selectedDeck">
+              </select>
+            </div>
+            <button type="button" class="btn btn-lg btn-primary controller-margin" ng-hide="main.selectedDeck == {}" ng-click="main.play()">
+              Play
+            </button>
+        </div>
+        <div class="col-md-8">
+          <h4>{{main.selectedDeck.name}}</h4>
+          <ul>
+            <li ng-repeat="c in main.selectedDeck.cards">
+              {{c.card.name}} x{{c.count}}
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-md-8">
-        <h4>{{main.selectedDeck.name}}</h4>
-        <ul>
-          <li ng-repeat="c in main.selectedDeck.cards">
-            {{c.card.name}} x{{c.count}}
-          </li>
-        </ul>
-      </div>
+    </div>
+
+    <div class="container" ng-if="!main.hasDecks">
+      <h4>Construct your deck, plz</h4>
+    </div>
   </div>
 
-  <div class="container" ng-if="!main.hasDecks">
-    <h4>Construct your deck, plz</h4>
+  <div class="jumbotron" ng-hide="!main.inGame">
+    <button type="button" class="btn btn-lg btn-primary controller-margin" ng-click="main.toGame()">
+      Return to Game
+    </button>
   </div>
 </div>

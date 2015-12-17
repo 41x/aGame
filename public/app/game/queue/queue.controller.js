@@ -11,13 +11,14 @@ angular.module('core', ['ngAnimate'])
 
     vm.isFindGame = false;
     vm.count = 0;
-    
+
     socket.on('queueCount', function(data) {
         vm.isFindGame = (data.count > 1);
         vm.count = data.count;
     });
 
     socket.on('gameStart', function(data) {
+        player.setInGame(true);
         $location.path('/game');
     });
 

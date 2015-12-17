@@ -38,7 +38,7 @@ module.exports.destroyDeck = function(req, res) {
   req.user.decks.pull({ _id: req.params.deckId});
 
   req.user.save(function(err) {
-    if (err) validationError(res, err);
+    if (err) return validationError(res, err);
     res.json({ message: 'Deck destroied!' });
   });
 };
@@ -51,7 +51,7 @@ module.exports.addCard = function(req, res) {
     Card.findById(req.params.cardId, function(err, card) {
       if (err) return validationError(res, err);
       if (!card) return res.status(404).send('No such card');
-      
+
       var deck = req.user.decks.id(req.params.deckId);
       if (!deck) return res.status(404).send('No Deck');
 
@@ -85,7 +85,7 @@ module.exports.remCard = function(req, res) {
 
       deck.cards.forEach(function(el) {
         if (String(el.card) == String(card._id)) {
-          if (el.count > 1) 
+          if (el.count > 1)
             el.count -= 1;
           else
             deck.cards.pull(el);

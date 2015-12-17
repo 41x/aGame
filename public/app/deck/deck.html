@@ -1,27 +1,23 @@
 <div class="deck-container">
-
   <div class="row" >
-        <div class="col-md-2">
-    
-      <div class="list-group">
-        <a href="#" class="list-group-item" ng-repeat="deck in decker.user.decks" ng-class="decker.deckClass(deck)" ng-click="decker.selectDeck(deck)">
-          {{deck.name}}
-        </a>
+    <div class="col-md-2">
+        <div class="list-group">
+          <div class="row" ng-repeat="deck in decker.user.decks">
+            <a href="#" class="list-group-item col-md-12"  ng-class="decker.deckClass(deck)" ng-click="decker.selectDeck(deck)">
+              {{deck.name}}
+            </a>
+          </div>
+        </div>
+        <button type="button" id="buttonAddDeck" class="btn btn-lg btn-primary controller-margin" ng-click="decker.createDeck()">New Deck</button>
+        <button class="btn btn-lg btn-danger controller-margin" ng-hide="!decker.selectedDeck" ng-click="decker.removeDeck()">Delete</button>
       </div>
-      
-        <button type="button" id="buttonAddDeck" class="btn btn-lg btn-default">New Deck</button>
-    
-    </div>
-        <div class="col-md-2">
-      <ul class="list-group">
-        <li class="list-group-item" ng-repeat="card in decker.selectedDeck.cards" ng-click="decker.removeCard(card)">x{{card.count}} {{card.card.name}}</li>
-      </ul>
-    
-    
-    </div>
-        <div class="col-md-8">
-    
-          <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+      <div class="col-md-2">
+        <ul class="list-group">
+          <li class="list-group-item" ng-repeat="card in decker.selectedDeck.cards" ng-click="decker.removeCard(card)">x{{card.count}} {{card.card.name}}</li>
+        </ul>
+      </div>
+      <div class="col-md-8">
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
           <thead>
             <tr>
               <th>Name</th>
@@ -41,15 +37,6 @@
             </tr>
           </tbody>
         </table>
-
-      
-    
-    
-    
-    
-    </div>
       </div>
-   
-</div>    
-
-  
+    </div>
+</div>

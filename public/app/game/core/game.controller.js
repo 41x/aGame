@@ -10,7 +10,9 @@ angular.module('core')
 
     socket.emit('gameConnect', { name: name });
 
-    vm.canAttackClass = function() {
+    vm.canAttackClass = function(card) {
+      if (card && !card.canAttacked) return;
+      if (!card && vm.enemy && !vm.enemy.canAttacked) return;
       if (toAttack != -1) return 'can-attack';
     };
 
@@ -21,7 +23,6 @@ angular.module('core')
 
 
     vm.attackCard = function(card) {
-      console.log(toAttack);
       if (!vm.turn || toAttack == -1) return;
 
       socket.emit('attackCard', { from: toAttack, to: card.id })
@@ -30,7 +31,6 @@ angular.module('core')
 
 
     vm.attackHero= function() {
-      console.log(toAttack);
       if (!vm.turn || toAttack == -1) return;
 
       socket.emit('attackHero', { from: toAttack })
@@ -67,8 +67,10 @@ angular.module('core')
     });
 
     socket.on('gameOver', function(data) {
+      console.log(data);
       Auth.resetCache();
       player.clear();
+      player.setInGame(false);
       $location.path('/');
     });
 

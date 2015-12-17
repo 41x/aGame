@@ -1,4 +1,4 @@
-header .navbar    { 
+header .navbar    {
   margin: 0px;
   min-height: 20px;
   height: 20px;
@@ -13,6 +13,9 @@ body, html {
   padding: 30px;
 }
 
+.controller-margin {
+  margin: 5px;
+}
 
 .navbar {
   min-height:28px !important;

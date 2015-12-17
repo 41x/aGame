@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('core')
-  .service('player', function(){
+  .service('player', function($rootScope){
     this.info = {};
+    this.inGame = false;
+
     console.log('recreated');
 
     return {
@@ -10,6 +12,12 @@ angular.module('core')
         this.info = _info;
         localStorage['player.info'] = JSON.stringify(this.info);
       },
+
+      setInGame: function(_isInGame) {
+        this.inGame = _isInGame;
+        $rootScope.$broadcast('inGameSet', { inGame: this.inGame });
+      },
+
       getInfo: function() {
         if (this.info) return this.info;
         if (localStorage['player.info'] && localStorage['player.info'].length) {
@@ -18,6 +26,11 @@ angular.module('core')
 
         return this.info;
       },
+
+      getInGame: function() {
+        return this.inGame;
+      },
+
       clear: function() {
         this.info = {};
         localStorage['player.info'] = '';

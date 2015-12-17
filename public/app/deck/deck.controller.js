@@ -7,7 +7,7 @@ angular.module('deck', [])
     vm.loggedIn = Auth.isLoggedIn();
 
     vm.decks = [];
-    vm.selectedDeck = {};
+    vm.selectedDeck = null;
     vm.cards = [];
 
     vm.selectDeck = function(deck) {
@@ -20,6 +20,45 @@ angular.module('deck', [])
       if (vm.selectedDeck._id == deck._id) return 'active';
     }
 
+    vm.isDeckSelected = function() {
+      if (!vm.selectedDeck) return false;
+      else return true;
+    }
+
+    vm.createDeck = function() {
+      var deckName = prompt('Enter deck name');
+      if (deckName != null) {
+        $http.post('/api/decks', { name: deckName })
+          .then(function(success) {
+            Auth.resetCache();
+            Auth.getUser()
+                .then(function(success) {
+                  vm.user = success.data;
+                }, function(err) {
+                  $location.path('login');
+                });
+          }, function(error) {
+            console.log(error);
+          });
+      }
+    };
+
+    vm.removeDeck = function() {
+      console.log(vm.selectedDeck);
+      $http.delete('/api/decks/' + vm.selectedDeck._id )
+        .then(function(success) {
+          Auth.resetCache();
+          Auth.getUser()
+              .then(function(success) {
+                vm.user = success.data;
+              }, function(err) {
+                $location.path('login');
+              });
+        }, function(error) {
+          console.log(error);
+        });
+    };
+
     vm.removeCard = function(card) {
       $http.delete('/api/decks/' + vm.selectedDeck._id + '/cards/' + card.card._id)
         .then(function(success) {
@@ -30,7 +69,7 @@ angular.module('deck', [])
             card.count--;
           }
         }, function(err) {
-          
+
         });
     }
 
@@ -38,22 +77,19 @@ angular.module('deck', [])
       console.log(card);
       $http.post('/api/decks/' + vm.selectedDeck._id + '/cards/' + card._id)
         .then(function(success) {
-      
           for (var i = 0; i < vm.selectedDeck.cards.length; i++) {
             if (vm.selectedDeck.cards[i].card._id == card._id) {
               vm.selectedDeck.cards[i].count++;
               return
             }
           }
-          
           vm.selectedDeck.cards.push({
             card : card,
             count : 1
           });
             //go
-          
         }, function(err) {
-          
+
         });
     }
 
@@ -74,5 +110,5 @@ angular.module('deck', [])
         });
 
 
-  
+
   });

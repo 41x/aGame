@@ -66,9 +66,13 @@ Game.prototype.attackHero = function(name, info) {
   this.sendInfoAll(name, info);
 };
 
+
 Game.prototype.sendInfoAll = function(name, attackInfo) {
   var player = this.players[name];
   var enemy = this.players[player.enemy];
+
+  player.checkTaunt();
+  enemy.checkTaunt();
 
   this.sendInfo(player, enemy, attackInfo);
   this.sendInfo(enemy, player, attackInfo);
@@ -88,6 +92,11 @@ Game.prototype.sendInfo = function(player, enemy, attackInfo) {
 };
 
 Game.prototype.enter = function(name) {
+  if (this.players[name].time) {
+    console.log(name + ' clear timeout');
+    clearTimeout(this.players[name].time);
+  }
+  this.players[name].isLeave = false;
   this.sendInfoAll(name);
 };
 
@@ -95,6 +104,11 @@ Game.prototype.reconnect = function(name, socket) {
   console.log(name + ' reconnected');
   socket.name = name;
   this.players[name].socket = socket;
+  if (this.players[name].time) {
+    console.log(name + ' clear timeout');
+    clearTimeout(this.players[name].time);
+  }
+  this.players[name].isLeave = false;
   this.addOnAll(socket);
 };
 
@@ -114,6 +128,24 @@ Game.prototype.gameOver = function(winnerName, looserName) {
   looser.gameOver(0);
 };
 
+Game.prototype.leave = function(leaverName) {
+  var self = this;
+
+  var leaver = this.players[leaverName];
+  var notLeaver = this.players[leaver.enemy];
+  if (notLeaver.isLeave) return;
+  if (leaver.time) clearTimeout(leaver.time);
+  leaver.isLeave = true;
+  console.log(leaver.name + ' isLeaved and will be loose');
+  leaver.time = setTimeout(function() {
+    if (leaver.isLeave) {
+      var notLeaver = self.players[leaver.enemy];
+      if (notLeaver.time) clearTimeout(notLeaver.time);
+      self.gameOver( notLeaver.name, leaver.name)
+    }
+  }, 5 * 1000);
+};
+
 /*
   LISTENERS ADD
 */
@@ -130,9 +162,10 @@ Game.prototype.addOnAll = function(socket) {
 
 Game.prototype.RemoveOnAll = function(socket) {
   socket.removeAllListeners('gameEnter');
-  socket.removeAllListeners('gameLeaver');
+  socket.removeAllListeners('gameLeave');
   socket.removeAllListeners('disconnect');
   socket.removeAllListeners('gameNextTurn');
+  this.queue.addOnEnter(socket);
 };
 
 Game.prototype.addOnPlayCard = function(socket) {
@@ -160,12 +193,14 @@ Game.prototype.addOnEnter = function(socket) {
   var game = this;
   socket.on('gameEnter', function(data) {
     game.enter(socket.name);
+    console.log(socket.name + ' enter');
   });
 };
 
 Game.prototype.addOnLeave = function(socket) {
   var game = this;
   socket.on('gameLeave', function() {
+    game.leave(socket.name);
     console.log(socket.name + ' left');
   });
 };
@@ -173,7 +208,8 @@ Game.prototype.addOnLeave = function(socket) {
 Game.prototype.addOnDisconnect = function(socket) {
   var game = this;
   socket.on('disconnect', function() {
-    console.log(socket.name + ' disc');
+    game.leave(socket.name);
+    console.log(socket.name + ' left');
   });
 };
 

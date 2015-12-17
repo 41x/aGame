@@ -15,6 +15,7 @@ function Player(socket, data) {
   this.hand = [];
   this.fight = [];
   this.cards = [];
+  this.canAttacked = true;
   this.processCards(data);
 }
 
@@ -45,7 +46,22 @@ Player.prototype.setTurn = function() {
     this.currentMp = this.mp;
     this.addCardToHand(1);
   }
-}
+};
+
+Player.prototype.checkTaunt = function() {
+  this.canAttacked = true;
+  for (var i = 0; i < this.fight.length; i++) {
+    this.fight[i].canAttacked = true;
+    if (this.fight[i].isTaunt()) {
+      this.canAttacked = false;
+      for (var j = 0; j < this.fight.length; j++) {
+        if (this.fight[j].isTaunt()) this.fight[i].canAttacked = true;
+        else this.fight[j].canAttacked = false;
+      }
+      return;
+    }
+  }
+};
 
 Player.prototype.addCardToHand = function(times) {
   for (var i = 0; i < times; i++) {
@@ -110,8 +126,6 @@ Player.prototype.getPrivateInfo = function() {
     fight: this.fight,
     cards: this.cards.length
   };
-
-
 };
 
 Player.prototype.getPublicInfo = function() {
@@ -124,7 +138,8 @@ Player.prototype.getPublicInfo = function() {
     games: this.games,
     fight: this.fight,
     cards: this.cards.length,
-    handCount: this.hand.length
+    handCount: this.hand.length,
+    canAttacked: this.canAttacked
   };
 };
 

@@ -35,8 +35,8 @@
     </div>
   </div>
   <div class="container part part-arena-enemy">
-    <div class="arena-cards">    
-      <div class="xcard unselectable" ng-repeat="card in game.enemy.fight" ng-class="game.canAttackClass()" ng-click="game.attackCard(card)">
+    <div class="arena-cards">
+      <div class="xcard unselectable" ng-repeat="card in game.enemy.fight" ng-class="game.canAttackClass(card)" ng-click="game.attackCard(card)">
         <div class="xcard-prop xcard-prop-mp">
             <i class="fa fa-usd"></i>
             <span>{{card.cost}}</span>
@@ -45,7 +45,7 @@
           <span class="xcard-name">{{card.name}}</span>
         </div>
         <img src="assets/img/{{card.img}}.jpg">
-        
+
         <div class="xcard-power">{{card.power}}</div>
 
         <div class="xcard-props">
@@ -60,10 +60,10 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
   <div class="container part part-arena-me">
-    <div class="arena-cards">    
+    <div class="arena-cards">
       <div class="xcard unselectable" ng-repeat="card in game.me.fight" ng-class="game.availableClass(card)" ng-click="game.selectToAttack(card)">
         <div class="xcard-prop xcard-prop-mp">
             <i class="fa fa-usd"></i>
@@ -73,7 +73,7 @@
           <span class="xcard-name">{{card.name}}</span>
         </div>
         <img src="assets/img/{{card.img}}.jpg">
-        
+
         <div class="xcard-power">{{card.power}}</div>
 
         <div class="xcard-props">
@@ -88,7 +88,7 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 
    <div class="container part-header">
@@ -127,7 +127,7 @@
 
   </div>
   <div class="container part">
-    <div class="deck">    
+    <div class="deck">
       <div class="xcard unselectable" ng-repeat="card in game.me.hand" ng-click="game.playCard(card.id)">
         <div class="xcard-prop xcard-prop-mp">
             <i class="fa fa-usd"></i>
@@ -137,7 +137,7 @@
           <span class="xcard-name">{{card.name}}</span>
         </div>
         <img src="assets/img/{{card.img}}.jpg">
-        
+
         <div class="xcard-power">{{card.power}}</div>
 
         <div class="xcard-props">
@@ -152,6 +152,6 @@
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 </div>

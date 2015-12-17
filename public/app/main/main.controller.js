@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('main', [])
-  .controller('mainController', function($rootScope, $location, Auth, player) {
+  .controller('mainController', function($rootScope, $scope, $location, Auth, player) {
     var vm = this;
 
     vm.loggedIn = Auth.isLoggedIn();
+    vm.inGame = player.getInGame();
 
     vm.decks = [];
     vm.hasDecks = false;
@@ -30,6 +31,14 @@ angular.module('main', [])
       }
     }
 
+    $scope.$on('inGameSet', function(event, data) {
+      vm.inGame = data.inGame;
+    });
+
+    vm.toGame = function() {
+      $location.path('/game');
+    };
+
     function addDecks(decks) {
       for (var i in decks) {
         var count = 0;
@@ -37,7 +46,7 @@ angular.module('main', [])
           count += decks[i].cards[j].count;
         }
 
-        if (count == 30) 
+        if (count == 30)
           vm.decks.push(decks[i]);
       }
 

@@ -21,7 +21,7 @@ module.exports.create = function(req, res) {
   if (req.body.name == undefined || req.body.password == undefined)
     return validationError(res, { message: 'No parameters' });
 
-  var user = new User(); 
+  var user = new User();
   user.name = req.body.name;
   user.password = req.body.password;
   user.role = 'user';
@@ -45,6 +45,13 @@ module.exports.show = function(req, res) {
   });
 };
 
+module.exports.rating = function(req, res) {
+  User.find().sort({ wins: -1, games: 1 }).select('name wins games').limit(25).exec(function(err, users) {
+    if(err) return res.status(500).send(err);
+    res.status(200).json(users);
+  });
+};
+
 module.exports.destroy = function(req, res) {
   var userId = req.params.id;
 
@@ -64,4 +71,3 @@ module.exports.me = function(req, res) {
       res.json(user);
     });
 };
-
