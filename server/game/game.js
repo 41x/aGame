@@ -14,6 +14,8 @@ function Game(players, queue) {
   }
 
   this.players[players[0].name].turn = true;
+  this.players[players[0].name].ava = 1;
+  this.players[players[1].name].ava = 2;
 
   for (var i in this.players) {
     this.players[i].addCardToHand(5);

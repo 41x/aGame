@@ -117,6 +117,7 @@ Player.prototype.checkDestroy = function() {
 Player.prototype.getPrivateInfo = function() {
   return {
     name: this.name,
+    ava: this.ava,
     health: this.health,
     mp: this.mp,
     cmp: this.currentMp,
@@ -131,6 +132,7 @@ Player.prototype.getPrivateInfo = function() {
 Player.prototype.getPublicInfo = function() {
   return {
     name: this.name,
+    ava: this.ava,
     health: this.health,
     mp: this.mp,
     cmp: this.currentMp,
