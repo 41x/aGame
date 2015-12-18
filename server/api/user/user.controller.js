@@ -65,7 +65,7 @@ module.exports.me = function(req, res) {
   User.findOne({ _id: req.user._id })
     .populate('decks.cards.card')
     .exec(function(err, user) {
-      if (err) return next(err);
+      if (err) return validationError(res, err);
       if (!user) return res.status(401).send('Unauthorized');
       console.log('me: ' + user.name);
       res.json(user);
