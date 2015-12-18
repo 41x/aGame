@@ -59,6 +59,7 @@ angular.module('core')
 
     socket.on('gameInfo', function(data) {
       player.setInfo(data);
+      player.setInGame(true);
       vm.player = player.getInfo();
       vm.enemy = vm.player.enemy;
       vm.me = vm.player.me;
