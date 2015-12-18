@@ -92,7 +92,12 @@ angular.module('deck', [])
           console.log(error);
         });
     };
-    
+
+    $http.get('/api/cards', { cache: true })
+        .then(function(success) {
+          vm.cards = success.data;
+          console.log(vm.cards);
+              
     Auth.getUser()
         .then(function(success) {
           vm.user = success.data;
@@ -101,13 +106,11 @@ angular.module('deck', [])
         }, function(err) {
           $location.path('/login');
         });
-    $http.get('/api/cards', { cache: true })
-        .then(function(success) {
-          vm.cards = success.data;
-          console.log(vm.cards);
         }, function(err) {
           $location.path('/login');
         });
+
+
 
 
 
