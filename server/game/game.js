@@ -145,7 +145,7 @@ Game.prototype.leave = function(leaverName) {
       if (notLeaver.time) clearTimeout(notLeaver.time);
       self.gameOver( notLeaver.name, leaver.name)
     }
-  }, 15 * 1000);
+  }, 20 * 1000);
 };
 
 /*
