@@ -31,14 +31,14 @@ Card.prototype.isTaunt = function() {
 };
 
 Card.prototype.attackCard = function(cardD) {
-  if (!cardD.canAttacked && this.available <= 0) return;
+  if (!cardD.canAttacked || this.available <= 0) return;
   this.available -= 1;
   if (!this.checkHS()) this.health -= cardD.attack;
   if (!cardD.checkHS()) cardD.health -= this.attack;
 };
 
 Card.prototype.attackHero = function(enemy) {
-  if (!enemy.canAttacked  && this.available <= 0) return;
+  if (!enemy.canAttacked  || this.available <= 0) return;
   this.available -= 1;
   enemy.health  -= this.attack;
 };
