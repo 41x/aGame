@@ -43,7 +43,7 @@ angular.module('deck', [])
     };
 
     vm.removeDeck = function() {
-      console.log(vm.selectedDeck);
+      if (!vm.selectedDeck) return;
       $http.delete('/api/decks/' + vm.selectedDeck._id )
         .then(function(success) {
           Auth.resetCache();
@@ -59,6 +59,7 @@ angular.module('deck', [])
     };
 
     vm.removeCard = function(card) {
+      if (!vm.selectedDeck) return;
       $http.delete('/api/decks/' + vm.selectedDeck._id + '/cards/' + card.card._id)
         .then(function(success) {
           if (card.count == 1) {
@@ -68,12 +69,12 @@ angular.module('deck', [])
             card.count--;
           }
         }, function(err) {
-
+          console.log(error);
         });
     }
 
     vm.addCard = function(card) {
-      console.log(card);
+      if (!vm.selectedDeck) return;
       $http.post('/api/decks/' + vm.selectedDeck._id + '/cards/' + card._id)
         .then(function(success) {
           for (var i = 0; i < vm.selectedDeck.cards.length; i++) {
@@ -88,7 +89,7 @@ angular.module('deck', [])
           });
             //go
         }, function(err) {
-
+          console.log(error);
         });
     };
     
