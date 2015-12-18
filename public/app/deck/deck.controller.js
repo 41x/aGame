@@ -96,7 +96,6 @@ angular.module('deck', [])
     Auth.getUser()
         .then(function(success) {
           vm.user = success.data;
-          $('#example').DataTable();
           console.log(vm.user);
         }, function(err) {
           $location.path('login');
@@ -104,6 +103,7 @@ angular.module('deck', [])
     $http.get('/api/cards', { cache: true })
         .then(function(success) {
           vm.cards = success.data;
+          $('#example').DataTable();
           console.log(vm.cards);
         }, function(err) {
           $location.path('login');
