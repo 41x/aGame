@@ -1,14 +1,13 @@
 'use strict';
 
 angular.module('deck', [])
-  .controller('deckController', function($rootScope, $location, $http, Auth) {
+  .controller('deckController', function($rootScope, $scope, $location, $http, Auth) {
     var vm = this;
 
     vm.loggedIn = Auth.isLoggedIn();
 
     vm.decks = [];
     vm.selectedDeck = null;
-    vm.cards = [];
 
     vm.selectDeck = function(deck) {
       vm.selectedDeck = deck;
@@ -91,22 +90,22 @@ angular.module('deck', [])
         }, function(err) {
 
         });
-    }
-
+    };
+    
     Auth.getUser()
         .then(function(success) {
           vm.user = success.data;
+          $('#example').DataTable();
           console.log(vm.user);
         }, function(err) {
-          $location.path('login');
+          $location.path('/login');
         });
     $http.get('/api/cards', { cache: true })
         .then(function(success) {
           vm.cards = success.data;
-          $('#example').DataTable();
           console.log(vm.cards);
         }, function(err) {
-          $location.path('login');
+          $location.path('/login');
         });
 
 
